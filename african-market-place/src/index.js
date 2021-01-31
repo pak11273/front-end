@@ -30,6 +30,7 @@ function App() {
 
   return (
     <Switch>
+
       <Route path="/landing" component={LandingPage} />
       {/* any of the routes you need secured should be registered as SecureRoutes */}
       <Route path="/" exact component={() => <LandingPage />} />
