@@ -1,17 +1,22 @@
+import * as yup from "yup";
+
 import React, { useState } from 'react';
+
+import schema from "../../../schema";
 
 export const SignUpPage = () => {
   const initialForm = {
     username: '',
     email: '',
     password: '',
-    confirm: '',
+    confirmPassword: '',
   };
 
   const [form, setForm] = useState(initialForm);
 
   const onChange = e => {
     const { name, value } = e.target;
+    updateSignInForm(name, value);
     setForm({
       ...form,
       [name]: value,
@@ -21,6 +26,41 @@ export const SignUpPage = () => {
   const onSubmit = e => {
     e.preventDefault();
     // redirect to home page on successful validation
+  };
+
+  const errors = {
+    username: "",
+    email: "",
+    country: "",
+    password: "",
+    confirmPassword: "",
+  };
+
+  const formValues = {
+    username: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+  };
+
+  const [signUpErrors, setSignUpErrors] = useState(errors);
+  const [signUpFormValues, setSignUpFormValues] = useState(formValues);
+
+  const updateSignInForm = (name, value) => {
+    console.log('name: ', name);
+    console.log('value: ', value);
+    yup
+      .reach(schema, name)
+      .validate(value)
+      .then(() => {
+        console.log("hi");
+        setSignUpErrors({ ...signUpErrors, [name]: "" });
+      })
+      .catch((error) => {
+        setSignUpErrors({ ...signUpErrors, [name]: error.errors[0] });
+      });
+
+    // setSignUpFormValues({ ...signUpFormValues, [name]: value });
   };
 
   return (
@@ -95,8 +135,8 @@ export const SignUpPage = () => {
                 confirm password
                 <input
                   type="password"
-                  name="confirm"
-                  value={form.confirm}
+                  name="confirmPassword"
+                  value={form.confirmPassword}
                   onChange={onChange}
                 />
               </label>

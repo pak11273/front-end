@@ -1,11 +1,15 @@
 import './assets/css/main.css';
 
-import App from './App';
+import App from './app';
 import { Header } from './components/common';
-// import { LoadingComponent } from './components/common';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
+
+// import { LoadingComponent } from './components/common';
+
+
+
 
 ReactDOM.render(
   <Router>

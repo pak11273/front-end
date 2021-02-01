@@ -6,7 +6,7 @@ import { NotFoundPage } from './components/pages/NotFound';
 import React from 'react';
 import { SignUpPage } from './components/pages/SignUp';
 
-export default function App() {
+export default function mainApp() {
   return (
     <Switch>
       <Route path="/" exact component={() => <LandingPage />} />
