@@ -10,6 +10,7 @@ export const SignUpPage = () => {
     email: '',
     password: '',
     confirmPassword: '',
+    country: "",
   };
 
   const [form, setForm] = useState(initialForm);
@@ -41,6 +42,7 @@ export const SignUpPage = () => {
     email: '',
     password: '',
     confirmPassword: '',
+    country: "",
   };
 
   const [signUpErrors, setSignUpErrors] = useState(errors);
@@ -53,7 +55,6 @@ export const SignUpPage = () => {
       .reach(schema, name)
       .validate(value)
       .then(() => {
-        console.log("hi");
         setSignUpErrors({ ...signUpErrors, [name]: "" });
       })
       .catch((error) => {
