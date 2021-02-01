@@ -1,6 +1,6 @@
 import './assets/css/main.css';
 
-import App from './app';
+import App from './App';
 import { Header } from './components/common';
 // import { LoadingComponent } from './components/common';
 import React from 'react';
