@@ -59,6 +59,20 @@ export const SignUpPage = () => {
                 />
               </label>
               <label
+              style={{
+                  maxWidth: '200px',
+                  margin: '40px auto',
+                }}
+              >
+                country
+                <input 
+                  type="text"
+                  name="country"
+                  value={form.country}
+                  onChange={onChange}
+                />    
+              </label>
+              <label
                 style={{
                   maxWidth: '200px',
                   margin: '40px auto',
