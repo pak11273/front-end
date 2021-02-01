@@ -14,13 +14,13 @@ function RenderLandingPage(props) {
             <br />
             to grow out of poverty.
           </p>
-          <ul className="actions special">
+          {/* <ul className="actions special">
             <li>
               <a href="#" className="button primary">
                 Activate
               </a>
             </li>
-          </ul>
+          </ul> */}
         </div>
         <a href="#one" className="more scrolly">
           Learn More
