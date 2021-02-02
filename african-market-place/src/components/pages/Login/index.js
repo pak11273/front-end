@@ -38,6 +38,21 @@ export const LoginPage = () => {
   const onSubmit = e => {
     e.preventDefault();
     // redirect to home page on successful validation
+
+    // axios
+    //   .post(
+    //     {
+    //       /* get endpoint from Rob */
+    //     },
+    //     loginFormValues
+    //   )
+    //   .then(response => {
+    //     console.log(response);
+    //   })
+    //   .catch(error => {
+    //     console.log(error);
+    //   });
+    // setLoginFormValues(initialForm);
   };
 
   const upDateLoginForm = (name, value) => {
@@ -77,6 +92,7 @@ export const LoginPage = () => {
                   onChange={onChange}
                 />
               </label>
+              <div style={{ color: 'red' }}>{loginErrors.username}</div>
               <label
                 style={{
                   maxWidth: '200px',
@@ -91,6 +107,7 @@ export const LoginPage = () => {
                   onChange={onChange}
                 />
               </label>
+              <div style={{ color: 'red' }}>{loginErrors.password}</div>
               <ul className="actions special">
                 <li>
                   <button className="button primary" disabled={disabled}>Login</button>
