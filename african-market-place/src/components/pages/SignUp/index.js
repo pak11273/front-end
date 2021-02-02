@@ -26,7 +26,7 @@ export const SignUpPage = () => {
     user_role: false,
   };
 
-  const [disabled, setDisabled] = useState(true);
+  const [disabled, setDisabled] = useState(false);
   const [signUpErrors, setSignUpErrors] = useState(errors);
   const [signUpFormValues, setSignUpFormValues] = useState(formValues);
 
@@ -48,13 +48,12 @@ export const SignUpPage = () => {
     console.log('signup: ', signUpFormValues);
     axios
       .post(
-        {
-          /* get endpoint from Rob */
-        },
+        "https://african-marketplace-tt14.herokuapp.com/api/signup",
         signUpFormValues
       )
       .then(response => {
-        console.log(response);
+        localStorage.setItem("token", response.data.token);
+        return PaymentResponse.history.push("/login");
       })
       .catch(error => {
         console.log(error);
