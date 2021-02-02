@@ -4,8 +4,8 @@ import { useHistory } from 'react-router-dom';
 export const Card = props => {
   const { push } = useHistory();
 
-  const pushToEditItem = () => {
-    push('/edititem');
+  const pushToEditItem = (e, props) => {
+    push(`/edititem/${props.id}`, props);
   };
 
   const {
@@ -25,7 +25,7 @@ export const Card = props => {
       <h4>quantity: {item_qty}</h4>
       <h4>quantity measurement: {item_qty_measurement}</h4>
       <h4>Category: {item_category}</h4>
-      <button className="edit-item" onClick={pushToEditItem}>
+      <button className="edit-item" onClick={e => pushToEditItem(e, props)}>
         Edit Item
       </button>
     </div>
