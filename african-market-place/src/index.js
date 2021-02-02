@@ -8,9 +8,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 // import { LoadingComponent } from './components/common';
 
-
-
-
 ReactDOM.render(
   <Router>
     <React.StrictMode>
