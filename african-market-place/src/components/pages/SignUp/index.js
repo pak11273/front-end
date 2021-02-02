@@ -1,12 +1,9 @@
 import * as yup from 'yup';
-import axios from "axios";
+
 import React, { useEffect, useState } from 'react';
-import { useHistory } from "react-router-dom";
 
+import axios from 'axios';
 import schema from '../../../schema';
-
-// import axios from 'axios';
-
 
 export const SignUpPage = () => {
   const errors = {
@@ -32,7 +29,6 @@ export const SignUpPage = () => {
   const [disabled, setDisabled] = useState(true);
   const [signUpErrors, setSignUpErrors] = useState(errors);
   const [signUpFormValues, setSignUpFormValues] = useState(formValues);
-  const { push } = useHistory();
 
   useEffect(() => {
     schema.isValid(signUpFormValues).then(valid => {
@@ -48,31 +44,22 @@ export const SignUpPage = () => {
 
   const onSubmit = e => {
     e.preventDefault();
-    axios
-    .post("https://virtserver.swaggerhub.com/rbhouck32/African-MarketPlace/1.0.0/auth/register",signUpFormValues)
-    .then(res => {
-      console.log(res);
-      push("/login");
-    })
-    .catch(err => {
-      console.log(err);
-    });
 
     console.log('signup: ', signUpFormValues);
-    // axios
-    //   .post(
-    //     {
-    //       /* get endpoint from Rob */
-    //     },
-    //     signUpFormValues
-    //   )
-    //   .then(response => {
-    //     console.log(response);
-    //   })
-    //   .catch(error => {
-    //     console.log(error);
-    //   });
-    // setSignUpFormValues(formValues);
+    axios
+      .post(
+        {
+          /* get endpoint from Rob */
+        },
+        signUpFormValues
+      )
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    setSignUpFormValues(formValues);
   };
 
   const updateSignInForm = (name, value) => {
