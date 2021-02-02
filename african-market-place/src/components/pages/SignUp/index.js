@@ -90,12 +90,13 @@ export const SignUpPage = () => {
                   margin: '40px auto',
                 }}
               >
-                username
+                
                 <input
                   type="text"
                   name="username"
                   value={signUpFormValues.username}
                   onChange={onChange}
+                  placeholder='Username'
                 />
               </label>
               <div style={{ color: 'red' }}>{signUpErrors.username}</div>
@@ -105,12 +106,13 @@ export const SignUpPage = () => {
                   margin: '40px auto',
                 }}
               >
-                first name
+                
                 <input
                   type="text"
                   name="first_name"
                   value={signUpFormValues.first_name}
                   onChange={onChange}
+                  placeholder='First name'
                 />
               </label>
               <div style={{ color: 'red' }}>{signUpErrors.first_name}</div>
@@ -120,12 +122,13 @@ export const SignUpPage = () => {
                   margin: '40px auto',
                 }}
               >
-                last name
+                
                 <input
                   type="text"
                   name="last_name"
                   value={signUpFormValues.last_name}
                   onChange={onChange}
+                  placeholder='Last Name'
                 />
               </label>
               <div style={{ color: 'red' }}>{signUpErrors.last_name}</div>
@@ -135,12 +138,13 @@ export const SignUpPage = () => {
                   margin: '40px auto',
                 }}
               >
-                email
+                
                 <input
                   type="email"
                   name="email"
                   value={signUpFormValues.email}
                   onChange={onChange}
+                  placeholder='Email'
                 />
               </label>
               <div style={{ color: 'red' }}>{signUpErrors.email}</div>
@@ -150,12 +154,13 @@ export const SignUpPage = () => {
                   margin: '40px auto',
                 }}
               >
-                country
+                
                 <input
                   type="text"
                   name="country"
                   value={signUpFormValues.country}
                   onChange={onChange}
+                  placeholder='Country'
                 />
               </label>
               <div style={{ color: 'red' }}>{signUpErrors.country}</div>
@@ -165,12 +170,13 @@ export const SignUpPage = () => {
                   margin: '40px auto',
                 }}
               >
-                password
+                
                 <input
                   type="password"
                   name="password"
                   value={signUpFormValues.password}
                   onChange={onChange}
+                  placeholder='Password'
                 />
               </label>
               <div style={{ color: 'red' }}>{signUpErrors.password}</div>
@@ -181,7 +187,7 @@ export const SignUpPage = () => {
                 }}
               >
                 {' '}
-                check box if owner
+                Market Owner?
                 <input
                   style={{
                     opacity: 1,
