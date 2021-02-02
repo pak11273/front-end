@@ -11,7 +11,7 @@ let schema = yup.object().shape({
   user_role: yup.boolean(),
 });
 
-export const logInSchema = yup.object().shape({
+export const loginSchema = yup.object().shape({
   username: yup.string().min(6).max(40).required('username is required'),
   password: yup.string().max(40).required('password is required'),
 });

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-import {logInSchema} from "../../../schema";
+import {loginSchema} from "../../../schema";
+
+import * as yup from "yup";
 
 export const LoginPage = () => {
   const initialForm = {
@@ -15,10 +17,10 @@ export const LoginPage = () => {
 
   const [loginFormValues, setLoginFormValues] = useState(initialForm);
   const [disabled, setDisabled] = useState(true);
-  const [loginErrors, setloginErrors] = useState(errors);
+  const [loginErrors, setLoginErrors] = useState(errors);
 
   useEffect(() => {
-    logInSchema.isValid(loginFormValues).then(valid => {
+    loginSchema.isValid(loginFormValues).then(valid => {
       setDisabled(!valid);
     });
 
@@ -30,11 +32,28 @@ export const LoginPage = () => {
       ...loginFormValues,
       [name]: value,
     });
+    upDateLoginForm(name, value);
   };
 
   const onSubmit = e => {
     e.preventDefault();
     // redirect to home page on successful validation
+  };
+
+  const upDateLoginForm = (name, value) => {
+    yup
+      .reach(loginSchema, name)
+      .validate(value)
+      .then(() => {
+        setLoginErrors({ ...loginErrors, [name]: '' });
+        setDisabled(false);
+      })
+      .catch(error => {
+        setLoginErrors({ ...loginErrors, [name]: error.errors[0] });
+      });
+
+    setLoginFormValues({ ...loginFormValues, [name]: value });
+
   };
 
   return (
