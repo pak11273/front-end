@@ -2,7 +2,7 @@ import * as yup from 'yup';
 
 import React, { useEffect, useState } from 'react';
 
-import axios from 'axios';
+// import axios from 'axios';
 import schema from '../../../schema';
 
 export const SignUpPage = () => {
@@ -46,20 +46,20 @@ export const SignUpPage = () => {
     e.preventDefault();
 
     console.log('signup: ', signUpFormValues);
-    axios
-      .post(
-        {
-          /* get endpoint from Rob */
-        },
-        signUpFormValues
-      )
-      .then(response => {
-        console.log(response);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-    setSignUpFormValues(formValues);
+    // axios
+    //   .post(
+    //     {
+    //       /* get endpoint from Rob */
+    //     },
+    //     signUpFormValues
+    //   )
+    //   .then(response => {
+    //     console.log(response);
+    //   })
+    //   .catch(error => {
+    //     console.log(error);
+    //   });
+    // setSignUpFormValues(formValues);
   };
 
   const updateSignInForm = (name, value) => {

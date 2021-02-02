@@ -6,12 +6,19 @@ export const LoginPage = () => {
     password: '',
   };
 
-  const [form, setForm] = useState(initialForm);
+  const errors = {
+    username: "",
+    password: "",
+  };
+
+  const [loginFormValues, setLoginFormValues] = useState(initialForm);
+  const [disabled, setDisabled] = useState(true);
+  const [loginErrors, setloginErrors] = useState(errors);
 
   const onChange = e => {
     const { name, value } = e.target;
-    setForm({
-      ...form,
+    setLoginFormValues({
+      ...loginFormValues,
       [name]: value,
     });
   };
@@ -38,7 +45,7 @@ export const LoginPage = () => {
                 <input
                   type="text"
                   name="username"
-                  value={form.username}
+                  value={loginFormValues.username}
                   onChange={onChange}
                 />
               </label>
@@ -52,7 +59,7 @@ export const LoginPage = () => {
                 <input
                   type="password"
                   name="password"
-                  value={form.password}
+                  value={loginFormValues.password}
                   onChange={onChange}
                 />
               </label>
