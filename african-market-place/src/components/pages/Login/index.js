@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+import {logInSchema} from "../../../schema";
 
 export const LoginPage = () => {
   const initialForm = {
@@ -14,6 +16,13 @@ export const LoginPage = () => {
   const [loginFormValues, setLoginFormValues] = useState(initialForm);
   const [disabled, setDisabled] = useState(true);
   const [loginErrors, setloginErrors] = useState(errors);
+
+  useEffect(() => {
+    logInSchema.isValid(loginFormValues).then(valid => {
+      setDisabled(!valid);
+    });
+
+  }, [loginFormValues]);
 
   const onChange = e => {
     const { name, value } = e.target;
@@ -65,7 +74,7 @@ export const LoginPage = () => {
               </label>
               <ul className="actions special">
                 <li>
-                  <button className="button primary">Login</button>
+                  <button className="button primary" disabled={disabled}>Login</button>
                 </li>
               </ul>
             </div>

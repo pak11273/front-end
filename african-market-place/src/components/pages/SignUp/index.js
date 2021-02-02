@@ -2,8 +2,10 @@ import * as yup from 'yup';
 
 import React, { useEffect, useState } from 'react';
 
-// import axios from 'axios';
 import schema from '../../../schema';
+
+// import axios from 'axios';
+
 
 export const SignUpPage = () => {
   const errors = {
@@ -217,3 +219,4 @@ export const SignUpPage = () => {
     </div>
   );
 };
+
