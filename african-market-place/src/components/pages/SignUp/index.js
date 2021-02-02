@@ -5,6 +5,73 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import schema from '../../../schema';
 
+const dummyData = [
+  {
+    id: 1,
+    item_name: 'potato',
+    item_category: 'vegetable',
+    item_price: '$3.00',
+    item_qty: 1,
+    item_qty_measurement: 'lbs',
+  },
+  {
+    id: 2,
+    item_name: 'potato',
+    item_category: 'vegetable',
+    item_price: '$3.00',
+    item_qty: 1,
+    item_qty_measurement: 'lbs',
+  },
+  {
+    id: 3,
+    item_name: 'potato',
+    item_category: 'vegetable',
+    item_price: '$3.00',
+    item_qty: 1,
+    item_qty_measurement: 'lbs',
+  },
+  {
+    id: 4,
+    item_name: 'potato',
+    item_category: 'vegetable',
+    item_price: '$3.00',
+    item_qty: 1,
+    item_qty_measurement: 'lbs',
+  },
+  {
+    id: 5,
+    item_name: 'potato',
+    item_category: 'vegetable',
+    item_price: '$3.00',
+    item_qty: 1,
+    item_qty_measurement: 'lbs',
+  },
+  {
+    id: 6,
+    item_name: 'potato',
+    item_category: 'vegetable',
+    item_price: '$3.00',
+    item_qty: 1,
+    item_qty_measurement: 'lbs',
+  },
+  {
+    id: 7,
+    item_name: 'potato',
+    item_category: 'vegetable',
+    item_price: '$3.00',
+    item_qty: 1,
+    item_qty_measurement: 'lbs',
+  },
+  {
+    id: 8,
+    item_name: 'potato',
+    item_category: 'vegetable',
+    item_price: '$3.00',
+    item_qty: 1,
+    item_qty_measurement: 'lbs',
+  },
+];
+
 export const SignUpPage = () => {
   const errors = {
     username: '',
@@ -48,12 +115,12 @@ export const SignUpPage = () => {
     console.log('signup: ', signUpFormValues);
     axios
       .post(
-        "https://african-marketplace-tt14.herokuapp.com/api/signup",
+        'https://african-marketplace-tt14.herokuapp.com/api/signup',
         signUpFormValues
       )
       .then(response => {
-        localStorage.setItem("token", response.data.token);
-        return PaymentResponse.history.push("/login");
+        localStorage.setItem('token', response.data.token);
+        return PaymentResponse.history.push('/login');
       })
       .catch(error => {
         console.log(error);
@@ -89,13 +156,12 @@ export const SignUpPage = () => {
                   margin: '40px auto',
                 }}
               >
-                
                 <input
                   type="text"
                   name="username"
                   value={signUpFormValues.username}
                   onChange={onChange}
-                  placeholder='Username'
+                  placeholder="Username"
                 />
               </label>
               <div style={{ color: 'red' }}>{signUpErrors.username}</div>
@@ -105,13 +171,12 @@ export const SignUpPage = () => {
                   margin: '40px auto',
                 }}
               >
-                
                 <input
                   type="text"
                   name="first_name"
                   value={signUpFormValues.first_name}
                   onChange={onChange}
-                  placeholder='First name'
+                  placeholder="First name"
                 />
               </label>
               <div style={{ color: 'red' }}>{signUpErrors.first_name}</div>
@@ -121,13 +186,12 @@ export const SignUpPage = () => {
                   margin: '40px auto',
                 }}
               >
-                
                 <input
                   type="text"
                   name="last_name"
                   value={signUpFormValues.last_name}
                   onChange={onChange}
-                  placeholder='Last Name'
+                  placeholder="Last Name"
                 />
               </label>
               <div style={{ color: 'red' }}>{signUpErrors.last_name}</div>
@@ -137,13 +201,12 @@ export const SignUpPage = () => {
                   margin: '40px auto',
                 }}
               >
-                
                 <input
                   type="email"
                   name="email"
                   value={signUpFormValues.email}
                   onChange={onChange}
-                  placeholder='Email'
+                  placeholder="Email"
                 />
               </label>
               <div style={{ color: 'red' }}>{signUpErrors.email}</div>
@@ -153,13 +216,12 @@ export const SignUpPage = () => {
                   margin: '40px auto',
                 }}
               >
-                
                 <input
                   type="text"
                   name="country"
                   value={signUpFormValues.country}
                   onChange={onChange}
-                  placeholder='Country'
+                  placeholder="Country"
                 />
               </label>
               <div style={{ color: 'red' }}>{signUpErrors.country}</div>
@@ -169,13 +231,12 @@ export const SignUpPage = () => {
                   margin: '40px auto',
                 }}
               >
-                
                 <input
                   type="password"
                   name="password"
                   value={signUpFormValues.password}
                   onChange={onChange}
-                  placeholder='Password'
+                  placeholder="Password"
                 />
               </label>
               <div style={{ color: 'red' }}>{signUpErrors.password}</div>
