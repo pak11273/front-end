@@ -1,7 +1,43 @@
-import { useDispatch, useSelector } from 'react-redux';
+// import { useDispatch, useSelector } from 'react-redux';
 
+import { Card } from '../../common/Card';
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+
+const dummyData = [
+  {
+    id: 1,
+    item_name: 'potato',
+    item_category: 'vegetable',
+    item_price: '$3.99',
+    item_qty: 1,
+    item_qty_measurement: 'lbs',
+  },
+  {
+    id: 2,
+    item_name: 'potato',
+    item_category: 'vegetable',
+    item_price: '$3.99',
+    item_qty: 1,
+    item_qty_measurement: 'lbs',
+  },
+  {
+    id: 3,
+    item_name: 'potato',
+    item_category: 'vegetable',
+    item_price: '$3.99',
+    item_qty: 1,
+    item_qty_measurement: 'lbs',
+  },
+  {
+    id: 4,
+    item_name: 'potato',
+    item_category: 'vegetable',
+    item_price: '$3.99',
+    item_qty: 1,
+    item_qty_measurement: 'lbs',
+  },
+];
 
 const Dashboard = () => {
   /* Unit 3 stuff */
@@ -17,9 +53,9 @@ const Dashboard = () => {
     push('/additem');
   };
 
-  const pushToEditItem = () => {
-    push('/edititem');
-  };
+  //   const pushToEditItem = () => {
+  //     push('/edititem');
+  //   };
 
   const onSubmit = () => {
     // pending
@@ -46,17 +82,22 @@ const Dashboard = () => {
             margin: '0 auto',
             display: 'flex',
             justifyContent: 'center',
+            flexDirection: 'column',
+            alignItems: 'center',
           }}
         >
+          <h1>African Marketplace</h1>
           <form onSubmit={onSubmit}>
-            <div className="inner">
-              <h1>African Marketplace</h1>
-              <button className="add-item" onClick={pushToAddItem}>
-                Add Item
-              </button>
-              <button className="edit-item" onClick={pushToEditItem}>
-                Edit Item
-              </button>
+            <div
+              className="inner"
+              style={{
+                display: 'flex',
+                flexFlow: 'row wrap',
+              }}
+            >
+              {dummyData.map(item => {
+                return <Card key={item.id} {...item} />;
+              })}
               {/* <button
         className="delete-item"
         onClick={() => deleteItemFunction(ele.id)}
@@ -65,6 +106,9 @@ const Dashboard = () => {
       </button> */}
               {/* <button className="log-out" onClick={  LogOut } > Log Out </button> */}
             </div>
+            <button className="add-item" onClick={pushToAddItem}>
+              Add Item
+            </button>
           </form>
         </section>
       </div>
