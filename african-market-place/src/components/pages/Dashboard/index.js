@@ -55,6 +55,9 @@ const Dashboard = () => {
     push('/edititem');
   };
 
+  const pushToMarketplace =() =>{
+    push('/marketplace');
+  };
   const onSubmit = () => {
     // pending
   };
@@ -117,11 +120,11 @@ const Dashboard = () => {
           Add Item
         </button>
         
-        <button>Go to Marketplace</button>
+        <button onClick = {pushToMarketplace}>Go to Marketplace</button>
       </div>
       <br/>
       <div style={{ textAlign: 'center' }}>
-      <button  className="log-out">Log Out</button>
+      <button  className="log-out" onClick = {LogOutButton}>Log Out</button>
     </div>
     </div>
   );
