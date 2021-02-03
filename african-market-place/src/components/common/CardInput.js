@@ -3,6 +3,7 @@ import React from 'react';
 export const CardInput = ({ label, product, onChange }) => {
   let item;
   let name;
+  let type = 'text';
 
   switch (label) {
     case 'name':
@@ -34,7 +35,7 @@ export const CardInput = ({ label, product, onChange }) => {
       <h1 style={{ marginRight: '10px' }}>{label}: </h1>
       <input
         style={{ maxWidth: '200px', height: '30px' }}
-        type="text"
+        type={type}
         name={name}
         defaultValue={item}
         onChange={onChange}

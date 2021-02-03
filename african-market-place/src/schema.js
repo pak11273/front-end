@@ -21,7 +21,9 @@ export const CardSchema = yup.object().shape({
   item_name: yup.string().max(255).required('a name is required'),
   item_category: yup.string().max(255).required('a category is required'),
   item_price: yup.string().required('a price is required'),
-  item_qty: yup.number().required('a number is required'),
+  item_qty: yup
+    .number('this must be a number')
+    .required('a number is required'),
   item_qty_measurement: yup
     .string()
     .max(255)

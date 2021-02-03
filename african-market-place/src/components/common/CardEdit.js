@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 
 import Button from './Button';
+import { CardDropdown } from './CardDropdown';
 import { CardInput } from './CardInput';
 import { CardSchema } from '../../schema';
 
@@ -51,6 +52,7 @@ export const CardEdit = props => {
 
   const onSubmit = e => {
     e.preventDefault();
+    console.log(ProductValues);
     // axios
     //   .post('', ProductValues)
     //   .then(response => {
@@ -72,22 +74,27 @@ export const CardEdit = props => {
       >
         <h2>id: {id} </h2>
         <CardInput label="name" product={ProductValues} onChange={onChange} />
+        <div style={{ color: 'red' }}>{errors.item_name}</div>
         <CardInput label="price" product={ProductValues} onChange={onChange} />
+        <div style={{ color: 'red' }}>{errors.item_price}</div>
         <CardInput
           label="quantity"
           product={ProductValues}
           onChange={onChange}
         />
+        <div style={{ color: 'red' }}>{errors.item_qty}</div>
         <CardInput
           label="measurement"
           product={ProductValues}
           onChange={onChange}
         />
-        <CardInput
+        <div style={{ color: 'red' }}>{errors.item_qty_measurement}</div>
+        <CardDropdown
           label="category"
           product={ProductValues}
           onChange={onChange}
         />
+        <div style={{ color: 'red' }}>{errors.item_category}</div>
       </div>
       <Button
         buttonText="Save Item"
