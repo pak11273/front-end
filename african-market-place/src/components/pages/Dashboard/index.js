@@ -1,3 +1,4 @@
+
 import { Card } from '../../common/Card';
 import React from 'react';
 import { useHistory } from 'react-router-dom';
@@ -47,17 +48,21 @@ const Dashboard = () => {
     push('/login');
   };
 
-  const pushToAddItem = () => {
-    push('/additem');
-  };
+  // const pushToAddItem = () => {
+  //   push('/additem');
+  // };
 
   const pushToEditItem = () => {
     push('/edititem');
   };
 
+  const pushToMarketplace =() =>{
+    push('/marketplace');
+  };
   const onSubmit = () => {
     // pending
   };
+
   //   const pushToDeleteItem = (id) => {
   //     //add axios call
   //     axiosWithAuth()
@@ -109,6 +114,10 @@ const Dashboard = () => {
               {/* <button className="log-out" onClick={  LogOut } > Log Out </button> */}
             </div>
           </form>
+
+          {/* <button className="add-item button primary" onClick={pushToAddItem}>
+            Add Item
+          </button> */}
         </section>
       </div>
 
@@ -117,11 +126,11 @@ const Dashboard = () => {
           Add Item
         </button>
         
-        <button>Go to Marketplace</button>
+        <button onClick = {pushToMarketplace}>Go to Marketplace</button>
       </div>
       <br/>
       <div style={{ textAlign: 'center' }}>
-      <button  className="log-out">Log Out</button>
+      <button  className="log-out" onClick = {LogOutButton}>Log Out</button>
     </div>
     </div>
   );

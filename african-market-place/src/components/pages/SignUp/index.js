@@ -53,7 +53,7 @@ export const SignUpPage = () => {
       )
       .then(response => {
         localStorage.setItem('token', response.data.token);
-        return PaymentResponse.history.push('/login');
+        push('/login');
       })
       .catch(error => {
         console.log(error);
