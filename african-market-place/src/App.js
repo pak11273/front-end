@@ -7,6 +7,7 @@ import { LoginPage } from './components/pages/Login';
 import { NotFoundPage } from './components/pages/NotFound';
 import React from 'react';
 import { SignUpPage } from './components/pages/SignUp';
+import SignUpCompleted from './components/pages/SignUpCompleted';
 
 export default function mainApp() {
   return (
@@ -24,7 +25,11 @@ export default function mainApp() {
       <Route path="/edititem/:id">
         <CardEdit />
       </Route>
+      <Route path='/success'>
+        <SignUpCompleted />
+        </Route>
       <Route component={NotFoundPage} />
+      
     </Switch>
   );
 }

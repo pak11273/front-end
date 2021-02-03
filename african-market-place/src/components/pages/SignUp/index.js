@@ -48,7 +48,7 @@ export const SignUpPage = () => {
     e.preventDefault();
     axios
       .post(
-        'https://african-marketplace-tt14.herokuapp.com/api/signup',
+        'https://african-marketplace-tt14.herokuapp.com/api/auth/register',
         signUpFormValues
       )
       .then(response => {

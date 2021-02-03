@@ -1,7 +1,7 @@
 import * as yup from 'yup';
 
 import React, { useEffect, useState } from 'react';
-
+import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 import { loginSchema } from '../../../schema';
 
@@ -19,7 +19,8 @@ export const LoginPage = () => {
   const [loginFormValues, setLoginFormValues] = useState(initialForm);
   const [disabled, setDisabled] = useState(true);
   const [loginErrors, setLoginErrors] = useState(errors);
-
+  const {push} = useHistory();
+  
   useEffect(() => {
     loginSchema.isValid(loginFormValues).then(valid => {
       setDisabled(!valid);
@@ -39,11 +40,13 @@ export const LoginPage = () => {
     e.preventDefault();
     axios
       .post(
-        'https://virtserver.swaggerhub.com/rbhouck32/African-MarketPlace/1.0.0/auth/login',
+        'https://african-marketplace-tt14.herokuapp.com/api/auth/login',
         loginFormValues
       )
       .then(response => {
         console.log(response);
+        localStorage.setItem('token', response.data.token);
+        push('/dashboard');
       })
       .catch(error => {
         console.log(error);

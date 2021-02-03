@@ -7,5 +7,5 @@ export const axiosWithAuth = () => {
         headers: {
             authorization: token
         }
-    })
-}
+    });
+};
