@@ -1,16 +1,15 @@
 // import { useDispatch, useSelector } from 'react-redux';
 
-import { useHistory, useLocation } from 'react-router-dom';
-
 import { Card } from '../../common/Card';
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 const dummyData = [
   {
     id: 1,
     item_name: 'potato',
     item_category: 'vegetable',
-    item_price: '$3.99',
+    item_price: '3.99',
     item_qty: 1,
     item_qty_measurement: 'lbs',
   },
@@ -18,7 +17,7 @@ const dummyData = [
     id: 2,
     item_name: 'potato',
     item_category: 'vegetable',
-    item_price: '$3.99',
+    item_price: '3.99',
     item_qty: 1,
     item_qty_measurement: 'lbs',
   },
@@ -26,7 +25,7 @@ const dummyData = [
     id: 3,
     item_name: 'potato',
     item_category: 'vegetable',
-    item_price: '$3.99',
+    item_price: '3.99',
     item_qty: 1,
     item_qty_measurement: 'lbs',
   },
@@ -34,7 +33,7 @@ const dummyData = [
     id: 4,
     item_name: 'potato',
     item_category: 'vegetable',
-    item_price: '$3.99',
+    item_price: '3.99',
     item_qty: 1,
     item_qty_measurement: 'lbs',
   },
@@ -98,10 +97,6 @@ const Dashboard = () => {
               {dummyData.map(item => {
                 return <Card key={item.id} {...item} />;
               })}
-              <div key={'a'}></div>
-              <div key={'b'}></div>
-              <div key={'c'}></div>
-              <div key={'d'}></div>
               {/* <button className="log-out" onClick={  LogOut } > Log Out </button> */}
             </div>
           </form>
