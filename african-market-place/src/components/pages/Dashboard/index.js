@@ -31,11 +31,11 @@ const dummyData = [
   },
   {
     id: 4,
-    item_name: 'potato',
+    item_name: 'jalapeno',
     item_category: 'vegetable',
-    item_price: '3.99',
+    item_price: '2.99',
     item_qty: 1,
-    item_qty_measurement: 'lbs',
+    item_qty_measurement: 'oz',
   },
 ];
 
