@@ -1,12 +1,10 @@
 import * as yup from 'yup';
-import axios from "axios";
+
 import React, { useEffect, useState } from 'react';
-import { useHistory } from "react-router-dom";
 
+import axios from 'axios';
 import schema from '../../../schema';
-
-// import axios from 'axios';
-
+import { useHistory } from 'react-router-dom';
 
 export const SignUpPage = () => {
   const errors = {
@@ -49,30 +47,18 @@ export const SignUpPage = () => {
   const onSubmit = e => {
     e.preventDefault();
     axios
-    .post("https://virtserver.swaggerhub.com/rbhouck32/African-MarketPlace/1.0.0/auth/register",signUpFormValues)
-    .then(res => {
-      console.log(res);
-      push("/login");
-    })
-    .catch(err => {
-      console.log(err);
-    });
-
-    console.log('signup: ', signUpFormValues);
-    // axios
-    //   .post(
-    //     {
-    //       /* get endpoint from Rob */
-    //     },
-    //     signUpFormValues
-    //   )
-    //   .then(response => {
-    //     console.log(response);
-    //   })
-    //   .catch(error => {
-    //     console.log(error);
-    //   });
-    // setSignUpFormValues(formValues);
+      .post(
+        'https://african-marketplace-tt14.herokuapp.com/api/signup',
+        signUpFormValues
+      )
+      .then(response => {
+        localStorage.setItem('token', response.data.token);
+        return PaymentResponse.history.push('/login');
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    setSignUpFormValues(formValues);
   };
 
   const updateSignInForm = (name, value) => {
@@ -91,10 +77,10 @@ export const SignUpPage = () => {
   };
 
   return (
-    <div id="page-wrapper">
+    <div id="page-wrapper" style={{ padding: 0 }}>
       <div className="landing is-preload">
-        <section id="banner">
-          <form onSubmit={onSubmit}>
+        <section id="banner" style={{ height: '100%' }}>
+          <form style={{ margin: '90px 0 2em 0' }} onSubmit={onSubmit}>
             <div className="inner">
               <h2>Sign Up</h2>
               <label
@@ -103,13 +89,12 @@ export const SignUpPage = () => {
                   margin: '40px auto',
                 }}
               >
-                
                 <input
                   type="text"
                   name="username"
                   value={signUpFormValues.username}
                   onChange={onChange}
-                  placeholder='Username'
+                  placeholder="Username"
                 />
               </label>
               <div style={{ color: 'red' }}>{signUpErrors.username}</div>
@@ -119,13 +104,12 @@ export const SignUpPage = () => {
                   margin: '40px auto',
                 }}
               >
-                
                 <input
                   type="text"
                   name="first_name"
                   value={signUpFormValues.first_name}
                   onChange={onChange}
-                  placeholder='First name'
+                  placeholder="First name"
                 />
               </label>
               <div style={{ color: 'red' }}>{signUpErrors.first_name}</div>
@@ -135,13 +119,12 @@ export const SignUpPage = () => {
                   margin: '40px auto',
                 }}
               >
-                
                 <input
                   type="text"
                   name="last_name"
                   value={signUpFormValues.last_name}
                   onChange={onChange}
-                  placeholder='Last Name'
+                  placeholder="Last Name"
                 />
               </label>
               <div style={{ color: 'red' }}>{signUpErrors.last_name}</div>
@@ -151,13 +134,12 @@ export const SignUpPage = () => {
                   margin: '40px auto',
                 }}
               >
-                
                 <input
                   type="email"
                   name="email"
                   value={signUpFormValues.email}
                   onChange={onChange}
-                  placeholder='Email'
+                  placeholder="Email"
                 />
               </label>
               <div style={{ color: 'red' }}>{signUpErrors.email}</div>
@@ -167,13 +149,12 @@ export const SignUpPage = () => {
                   margin: '40px auto',
                 }}
               >
-                
                 <input
                   type="text"
                   name="country"
                   value={signUpFormValues.country}
                   onChange={onChange}
-                  placeholder='Country'
+                  placeholder="Country"
                 />
               </label>
               <div style={{ color: 'red' }}>{signUpErrors.country}</div>
@@ -183,13 +164,12 @@ export const SignUpPage = () => {
                   margin: '40px auto',
                 }}
               >
-                
                 <input
                   type="password"
                   name="password"
                   value={signUpFormValues.password}
                   onChange={onChange}
-                  placeholder='Password'
+                  placeholder="Password"
                 />
               </label>
               <div style={{ color: 'red' }}>{signUpErrors.password}</div>
@@ -230,4 +210,3 @@ export const SignUpPage = () => {
     </div>
   );
 };
-

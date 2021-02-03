@@ -1,5 +1,7 @@
 import { Route, Switch } from 'react-router-dom';
 
+import { CardEdit } from './components/common/CardEdit';
+import Dashboard from './components/pages/Dashboard';
 import { LandingPage } from './components/pages/Landing';
 import { LoginPage } from './components/pages/Login';
 import { NotFoundPage } from './components/pages/NotFound';
@@ -16,7 +18,12 @@ export default function mainApp() {
       <Route path="/login">
         <LoginPage />
       </Route>
-
+      <Route path="/dashboard">
+        <Dashboard />
+      </Route>
+      <Route path="/edititem/:id">
+        <CardEdit />
+      </Route>
       <Route component={NotFoundPage} />
     </Switch>
   );

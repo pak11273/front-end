@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import axios from "axios";
-import {loginSchema} from "../../../schema";
+import * as yup from 'yup';
 
-import * as yup from "yup";
+import React, { useEffect, useState } from 'react';
+
+import axios from 'axios';
+import { loginSchema } from '../../../schema';
 
 export const LoginPage = () => {
   const initialForm = {
@@ -11,8 +12,8 @@ export const LoginPage = () => {
   };
 
   const errors = {
-    username: "",
-    password: "",
+    username: '',
+    password: '',
   };
 
   const [loginFormValues, setLoginFormValues] = useState(initialForm);
@@ -23,7 +24,6 @@ export const LoginPage = () => {
     loginSchema.isValid(loginFormValues).then(valid => {
       setDisabled(!valid);
     });
-
   }, [loginFormValues]);
 
   const onChange = e => {
@@ -36,31 +36,19 @@ export const LoginPage = () => {
   };
 
   const onSubmit = e => {
-    axios
-    .post("https://virtserver.swaggerhub.com/rbhouck32/African-MarketPlace/1.0.0/auth/login",loginFormValues)
-    .then(res => {
-      console.log(res);
-    })
-    .catch(err => {
-      console.log(err);
-    });
     e.preventDefault();
-    // redirect to home page on successful validation
-
-    // axios
-    //   .post(
-    //     {
-    //       /* get endpoint from Rob */
-    //     },
-    //     loginFormValues
-    //   )
-    //   .then(response => {
-    //     console.log(response);
-    //   })
-    //   .catch(error => {
-    //     console.log(error);
-    //   });
-    // setLoginFormValues(initialForm);
+    axios
+      .post(
+        'https://virtserver.swaggerhub.com/rbhouck32/African-MarketPlace/1.0.0/auth/login',
+        loginFormValues
+      )
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    setLoginFormValues(initialForm);
   };
 
   const upDateLoginForm = (name, value) => {
@@ -76,7 +64,6 @@ export const LoginPage = () => {
       });
 
     setLoginFormValues({ ...loginFormValues, [name]: value });
-
   };
 
   return (
@@ -118,7 +105,9 @@ export const LoginPage = () => {
               <div style={{ color: 'red' }}>{loginErrors.password}</div>
               <ul className="actions special">
                 <li>
-                  <button className="button primary" disabled={disabled}>Login</button>
+                  <button className="button primary" disabled={disabled}>
+                    Login
+                  </button>
                 </li>
               </ul>
             </div>
