@@ -8,26 +8,19 @@ import { NotFoundPage } from './components/pages/NotFound';
 import React from 'react';
 import { SignUpPage } from './components/pages/SignUp';
 import SignUpCompleted from './components/pages/SignUpCompleted';
+import Marketplace from './components/pages/Marketplace';
+import { PrivateRoute } from './utils/PrivateRout';
 
 export default function mainApp() {
   return (
     <Switch>
       <Route path="/" exact component={() => <LandingPage />} />
-      <Route path="/signup">
-        <SignUpPage />
-      </Route>
-      <Route path="/login">
-        <LoginPage />
-      </Route>
-      <Route path="/dashboard">
-        <Dashboard />
-      </Route>
-      <Route path="/edititem/:id">
-        <CardEdit />
-      </Route>
-      <Route path='/success'>
-        <SignUpCompleted />
-        </Route>
+      <Route exact path = '/signup' component = {SignUpPage} />
+      <Route exact path = '/success' component = {SignUpCompleted} />
+      <Route exact path = '/login' component = {LoginPage} />
+      <PrivateRoute exact path = '/dashboard' component = {Dashboard} />
+      <PrivateRoute exact path = '/marketplace' component = {Marketplace} />
+      <PrivateRoute exact path = '/edititem' component = {CardEdit} />
       <Route component={NotFoundPage} />
       
     </Switch>
