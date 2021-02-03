@@ -48,20 +48,6 @@ export const SignUpPage = () => {
     e.preventDefault();
     axios
       .post(
-        'https://virtserver.swaggerhub.com/rbhouck32/African-MarketPlace/1.0.0/auth/register',
-        signUpFormValues
-      )
-      .then(res => {
-        console.log(res);
-        push('/login');
-      })
-      .catch(err => {
-        console.log(err);
-      });
-
-    console.log('signup: ', signUpFormValues);
-    axios
-      .post(
         'https://african-marketplace-tt14.herokuapp.com/api/signup',
         signUpFormValues
       )
