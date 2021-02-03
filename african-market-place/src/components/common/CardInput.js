@@ -22,7 +22,7 @@ export const CardInput = ({ label, product, onChange }) => {
       name = 'item_qty_measurement';
       break;
     case 'category':
-      item = product.category;
+      item = product.item_category;
       name = 'item_category';
       break;
     default:

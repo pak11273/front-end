@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 
 import { CardInput } from './CardInput';
@@ -17,8 +17,13 @@ export const CardEdit = props => {
     });
   };
 
+  const onSubmit = e => {
+    e.preventDefault();
+    console.log('submit');
+  };
+
   return (
-    <>
+    <form onSubmit={onSubmit}>
       <div
         style={{
           margin: '100px auto 0',
@@ -39,6 +44,6 @@ export const CardEdit = props => {
       >
         Save Item
       </button>
-    </>
+    </form>
   );
 };
