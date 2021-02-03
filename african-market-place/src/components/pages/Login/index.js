@@ -11,30 +11,59 @@ export const LoginPage = () => {
     password: '',
   };
 
-  const [form, setForm] = useState(initialForm);
+  const errors = {
+    username: '',
+    password: '',
+  };
+
+  const [loginFormValues, setLoginFormValues] = useState(initialForm);
+  const [disabled, setDisabled] = useState(true);
+  const [loginErrors, setLoginErrors] = useState(errors);
+
+  useEffect(() => {
+    loginSchema.isValid(loginFormValues).then(valid => {
+      setDisabled(!valid);
+    });
+  }, [loginFormValues]);
 
   const onChange = e => {
     const { name, value } = e.target;
-    setForm({
-      ...form,
+    setLoginFormValues({
+      ...loginFormValues,
       [name]: value,
     });
+    upDateLoginForm(name, value);
   };
 
   const onSubmit = e => {
+    e.preventDefault();
     axios
       .post(
         'https://virtserver.swaggerhub.com/rbhouck32/African-MarketPlace/1.0.0/auth/login',
-        form
+        loginFormValues
       )
-      .then(res => {
-        console.log(res);
+      .then(response => {
+        console.log(response);
       })
-      .catch(err => {
-        console.log(err);
+      .catch(error => {
+        console.log(error);
       });
-    e.preventDefault();
-    // redirect to home page on successful validation
+    setLoginFormValues(initialForm);
+  };
+
+  const upDateLoginForm = (name, value) => {
+    yup
+      .reach(loginSchema, name)
+      .validate(value)
+      .then(() => {
+        setLoginErrors({ ...loginErrors, [name]: '' });
+        setDisabled(false);
+      })
+      .catch(error => {
+        setLoginErrors({ ...loginErrors, [name]: error.errors[0] });
+      });
+
+    setLoginFormValues({ ...loginFormValues, [name]: value });
   };
 
   return (
@@ -54,10 +83,11 @@ export const LoginPage = () => {
                 <input
                   type="text"
                   name="username"
-                  value={form.username}
+                  value={loginFormValues.username}
                   onChange={onChange}
                 />
               </label>
+              <div style={{ color: 'red' }}>{loginErrors.username}</div>
               <label
                 style={{
                   maxWidth: '200px',
@@ -68,13 +98,16 @@ export const LoginPage = () => {
                 <input
                   type="password"
                   name="password"
-                  value={form.password}
+                  value={loginFormValues.password}
                   onChange={onChange}
                 />
               </label>
+              <div style={{ color: 'red' }}>{loginErrors.password}</div>
               <ul className="actions special">
                 <li>
-                  <button className="button primary">Login</button>
+                  <button className="button primary" disabled={disabled}>
+                    Login
+                  </button>
                 </li>
               </ul>
             </div>
