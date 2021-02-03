@@ -1,8 +1,10 @@
+// import { useDispatch, useSelector } from 'react-redux';
 
 import { Card } from '../../common/Card';
 import React from 'react';
-import { useHistory } from 'react-router-dom';
-import { useSelector, useDispatch } from react-redux;
+
+// import { useHistory } from 'react-router-dom';
+
 const dummyData = [
   {
     id: 1,
@@ -40,46 +42,57 @@ const dummyData = [
 
 const Dashboard = () => {
   /* Unit 3 stuff */
-    const dispatch = useDispatch();
-  const { push } = useHistory();
-    const user = useSelector(state => state);
-    const LogOutButton = () => {
-      localStorage.removeItem('token');
-      push('/login');
-    };
+  // const dispatch = useDispatch();
+  // const { push } = useHistory();
+  // const user = useSelector(state => state);
+  // const LogOutButton = () => {
+  //   localStorage.removeItem('token');
+  //   push('/login');
+  // };
 
-  const pushToAddItem = () => {
-    push('/additem');
-  };
+  // const pushToAddItem = () => {
+  //   push('/additem');
+  // };
 
-    const pushToEditItem = () => {
-      push('/edititem');
-    };
+  // const pushToEditItem = () => {
+  //   push('/edititem');
+  // };
 
   const onSubmit = () => {
     // pending
   };
-  const pushToDeleteItem = (id) => {
-    //add axios call
-    axiosWithAuth()
-    .delete(`https://african-marketplace-tt14.herokuapp.com/${id}`)
-    .then((res) =>{
-        console.log(res);
-        dispatch(deleteItem(id));
-    })
-    .catch((err) => {
-        console.log(err);
-    })
-};
+  // const pushToDeleteItem = id => {
+  //   //add axios call
+  //   axiosWithAuth()
+  //     .delete(`https://african-marketplace-tt14.herokuapp.com/${id}`)
+  //     .then(res => {
+  //       console.log(res);
+  //       dispatch(deleteItem(id));
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //     });
+  // };
   return (
     <div id="page-wrapper">
-    <StyledNav>
-    <h1>African Marketplace</h1>
-    <button className='add-item' onClick={pushToAddItem}>Add Item</button>
-    <button className='edit-item' onClick={pushToEditItem}>Edit Item</button>
-    <button className='delete-item' onClick={() => deleteItemFunction(ele.id)}>Delete Item</button>
-    <button className='log-out' onClick={(logOutButton)}>Log Out</button>
-    </StyledNav>
+      {/* <StyledNav>
+        <h1>African Marketplace</h1>
+        <button className="add-item" onClick={pushToAddItem}>
+          Add Item
+        </button>
+        <button className="edit-item" onClick={pushToEditItem}>
+          Edit Item
+        </button>
+        <button
+          className="delete-item"
+          onClick={() => deleteItemFunction(ele.id)}
+        >
+          Delete Item
+        </button>
+        <button className="log-out" onClick={logOutButton}>
+          Log Out
+        </button>
+      </StyledNav> */}
       <div className="landing is-preload">
         <section
           style={{
@@ -117,9 +130,9 @@ const Dashboard = () => {
               {/* <button className="log-out" onClick={  LogOut } > Log Out </button> */}
             </div>
           </form>
-          <button className="add-item button primary" onClick={pushToAddItem}>
+          {/* <button className="add-item button primary" onClick={pushToAddItem}>
             Add Item
-          </button>
+          </button> */}
         </section>
       </div>
     </div>
