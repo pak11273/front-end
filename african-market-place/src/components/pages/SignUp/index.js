@@ -91,9 +91,9 @@ export const SignUpPage = () => {
   };
 
   return (
-    <div id="page-wrapper">
+    <div id="page-wrapper" style={{ padding: 0 }}>
       <div className="landing is-preload">
-        <section id="banner">
+        <section id="banner" style={{ height: '100%' }}>
           <form style={{ margin: '90px 0 2em 0' }} onSubmit={onSubmit}>
             <div className="inner">
               <h2>Sign Up</h2>
