@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 
+import { CardInput } from './CardInput';
+
 export const CardEdit = props => {
   const { id } = useParams();
   const { state } = useLocation();
@@ -15,14 +17,6 @@ export const CardEdit = props => {
     });
   };
 
-  // const {
-  //   item_name,
-  //   item_category,
-  //   item_price,
-  //   item_qty,
-  //   item_qty_measurement,
-  // } = props;
-
   return (
     <>
       <div
@@ -33,6 +27,7 @@ export const CardEdit = props => {
         }}
       >
         <h2>id: {id} </h2>
+        <CardInput item_property={product.item_name} onChange={onChange} />
         <div style={{ display: 'flex', alignItems: 'baseline' }}>
           <h1 style={{ marginRight: '10px' }}>name: </h1>
           <input
