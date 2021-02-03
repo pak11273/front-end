@@ -1,10 +1,10 @@
 import * as yup from 'yup';
-import axios from 'axios';
+
 import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
 
 import axios from 'axios';
 import schema from '../../../schema';
+import { useHistory } from 'react-router-dom';
 
 export const SignUpPage = () => {
   const errors = {
@@ -94,7 +94,7 @@ export const SignUpPage = () => {
     <div id="page-wrapper">
       <div className="landing is-preload">
         <section id="banner">
-          <form onSubmit={onSubmit}>
+          <form style={{ margin: '90px 0 2em 0' }} onSubmit={onSubmit}>
             <div className="inner">
               <h2>Sign Up</h2>
               <label
