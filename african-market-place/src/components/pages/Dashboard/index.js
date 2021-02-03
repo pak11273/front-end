@@ -1,3 +1,4 @@
+
 import { Card } from '../../common/Card';
 import React from 'react';
 import { useHistory } from 'react-router-dom';
@@ -47,9 +48,9 @@ const Dashboard = () => {
     push('/login');
   };
 
-  const pushToAddItem = () => {
-    push('/additem');
-  };
+  // const pushToAddItem = () => {
+  //   push('/additem');
+  // };
 
   const pushToEditItem = () => {
     push('/edititem');
@@ -61,6 +62,7 @@ const Dashboard = () => {
   const onSubmit = () => {
     // pending
   };
+
   //   const pushToDeleteItem = (id) => {
   //     //add axios call
   //     axiosWithAuth()
@@ -112,6 +114,10 @@ const Dashboard = () => {
               {/* <button className="log-out" onClick={  LogOut } > Log Out </button> */}
             </div>
           </form>
+
+          {/* <button className="add-item button primary" onClick={pushToAddItem}>
+            Add Item
+          </button> */}
         </section>
       </div>
 
