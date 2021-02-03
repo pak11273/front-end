@@ -8,6 +8,20 @@ export const Card = props => {
     push(`/edititem/${props.id}`, props);
   };
 
+  const pushToDeleteItem = (e, props) => {
+    push(`/deleteitem/${props.id}`, props);
+    //add axios call
+    // axiosWithAuth()
+    //   .delete(`https://african-marketplace-tt14.herokuapp.com/${id}`)
+    //   .then(res => {
+    //     console.log(res);
+    //     dispatch(deleteItem(id));
+    //   })
+    //   .catch(err => {
+    //     console.log(err);
+    //   });
+  };
+
   const {
     id,
     item_name,
@@ -18,16 +32,32 @@ export const Card = props => {
   } = props;
 
   return (
-    <div>
+    <div style={{ padding: '20px', margin: '20px auto' }}>
       <h1>name: {item_name}</h1>
-      <h2>id: {id}</h2>
-      <h3>price: {item_price}</h3>
-      <h4>quantity: {item_qty}</h4>
-      <h4>quantity measurement: {item_qty_measurement}</h4>
-      <h4>Category: {item_category}</h4>
-      <button className="edit-item" onClick={e => pushToEditItem(e, props)}>
-        Edit Item
-      </button>
+      <h6>id: {id}</h6>
+      <h6>price: {item_price}</h6>
+      <h6>quantity: {item_qty}</h6>
+      <h6>measurement: {item_qty_measurement}</h6>
+      <h6>Category: {item_category}</h6>
+      <input
+        type="button"
+        value="edit"
+        className="edit-item button primary"
+        style={{
+          height: '2em',
+          lineHeight: '2em',
+          padding: '0 1em',
+          marginRight: '1em',
+        }}
+        onClick={e => pushToEditItem(e, props)}
+      />
+      <input
+        className="delete-item button"
+        type="button"
+        value="delete"
+        style={{ height: '2em', lineHeight: '2em', padding: '0 1em' }}
+        onClick={e => pushToDeleteItem(e, props)}
+      />
     </div>
   );
 };

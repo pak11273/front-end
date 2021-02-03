@@ -62,19 +62,6 @@ const Dashboard = () => {
     // pending
   };
 
-  //   const pushToDeleteItem = id => {
-  //     //add axios call
-  //     axiosWithAuth()
-  //       .delete(`https://african-marketplace-tt14.herokuapp.com/${id}`)
-  //       .then(res => {
-  //         console.log(res);
-  //         dispatch(deleteItem(id));
-  //       })
-  //       .catch(err => {
-  //         console.log(err);
-  //       });
-  //   };
-
   return (
     <div id="page-wrapper">
       <div className="landing is-preload">
@@ -87,30 +74,40 @@ const Dashboard = () => {
             alignItems: 'center',
           }}
         >
-          <h1>African Marketplace</h1>
+          <h2
+            style={{
+              display: 'inline-block',
+              fontSize: '1.75em',
+              opacity: '1',
+              padding: '0.35em 1em',
+              position: 'relative',
+              textTransform: 'uppercase',
+            }}
+          >
+            African Marketplace
+          </h2>
           <form onSubmit={onSubmit}>
             <div
               className="inner"
               style={{
                 display: 'flex',
                 flexFlow: 'row wrap',
+                justifyContent: 'space-between',
               }}
             >
               {dummyData.map(item => {
                 return <Card key={item.id} {...item} />;
               })}
-              {/* <button
-        className="delete-item"
-        onClick={() => deleteItemFunction(ele.id)}
-      >
-        Delete Item
-      </button> */}
+              <div key={'a'}></div>
+              <div key={'b'}></div>
+              <div key={'c'}></div>
+              <div key={'d'}></div>
               {/* <button className="log-out" onClick={  LogOut } > Log Out </button> */}
             </div>
-            <button className="add-item" onClick={pushToAddItem}>
-              Add Item
-            </button>
           </form>
+          <button className="add-item button primary" onClick={pushToAddItem}>
+            Add Item
+          </button>
         </section>
       </div>
     </div>
