@@ -1,4 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from "axios";
+import {loginSchema} from "../../../schema";
+
+import * as yup from "yup";
+
 
 export const LoginPage = () => {
   const initialForm = {
@@ -17,6 +22,14 @@ export const LoginPage = () => {
   };
 
   const onSubmit = e => {
+    axios
+    .post("https://virtserver.swaggerhub.com/rbhouck32/African-MarketPlace/1.0.0/auth/login",loginFormValues)
+    .then(res => {
+      console.log(res);
+    })
+    .catch(err => {
+      console.log(err);
+    });
     e.preventDefault();
     // redirect to home page on successful validation
   };
