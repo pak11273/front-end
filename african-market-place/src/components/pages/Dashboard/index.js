@@ -1,7 +1,7 @@
-
 import { Card } from '../../common/Card';
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+
 // import { useSelector, useDispatch } from 'react-redux';
 // import axiosWithAuth from '../../../utils/axiosWithAuth';
 const dummyData = [
@@ -56,7 +56,7 @@ const Dashboard = () => {
     push('/edititem');
   };
 
-  const pushToMarketplace =() =>{
+  const pushToMarketplace = () => {
     push('/marketplace');
   };
   const onSubmit = () => {
@@ -122,16 +122,16 @@ const Dashboard = () => {
       </div>
 
       <div style={{ textAlign: 'center' }}>
-        <button className="add-item" onClick={pushToAddItem}>
-          Add Item
-        </button>
-        
-        <button onClick = {pushToMarketplace}>Go to Marketplace</button>
+        <button className="add-item">Add Item</button>
+
+        <button onClick={pushToMarketplace}>Go to Marketplace</button>
       </div>
-      <br/>
+      <br />
       <div style={{ textAlign: 'center' }}>
-      <button  className="log-out" onClick = {LogOutButton}>Log Out</button>
-    </div>
+        <button className="log-out" onClick={LogOutButton}>
+          Log Out
+        </button>
+      </div>
     </div>
   );
 };
