@@ -1,14 +1,28 @@
+import * as yup from 'yup';
+
 import React, { useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 
+import Button from './Button';
 import { CardInput } from './CardInput';
-import axios from 'axios';
+import { CardSchema } from '../../schema';
+
+// import axios from 'axios';
 
 export const CardEdit = props => {
   const { id } = useParams();
   const { state } = useLocation();
 
   const [ProductValues, setProductValues] = useState(state);
+  const [errors, setErrors] = useState({
+    id: '',
+    item_name: '',
+    item_category: '',
+    item_price: '',
+    item_qty: '',
+    item_qty_measurement: '',
+  });
+  const [disabled, setDisabled] = useState(true);
 
   const onChange = e => {
     const { name, value } = e.target;
@@ -16,11 +30,27 @@ export const CardEdit = props => {
       ...ProductValues,
       [name]: value,
     });
+    updateProductValues(name, value);
+  };
+
+  const updateProductValues = (name, value) => {
+    yup
+      .reach(CardSchema, name)
+      .validate(value)
+      .then(() => {
+        setErrors({ ...errors, [name]: '' });
+        setDisabled(false);
+      })
+      .catch(error => {
+        setErrors({ ...errors, [name]: error.errors[0] });
+        setDisabled(true);
+      });
+
+    setProductValues({ ...ProductValues, [name]: value });
   };
 
   const onSubmit = e => {
     e.preventDefault();
-    console.log(ProductValues);
     // axios
     //   .post('', ProductValues)
     //   .then(response => {
@@ -59,12 +89,12 @@ export const CardEdit = props => {
           onChange={onChange}
         />
       </div>
-      <button
-        className="edit-item"
+      <Button
+        buttonText="Save Item"
+        classType="edit-item"
         style={{ display: 'flex', margin: '40px auto' }}
-      >
-        Save Item
-      </button>
+        disabled={disabled}
+      />
     </form>
   );
 };
