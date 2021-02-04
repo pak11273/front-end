@@ -7,6 +7,7 @@ import { CardDropdown } from './CardDropdown';
 import { CardInput } from './CardInput';
 import { CardSchema } from '../../schema';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 const initialState = {
   id: '',
@@ -28,6 +29,7 @@ export const CardAdd = props => {
     item_qty_measurement: '',
   });
   const [disabled, setDisabled] = useState(true);
+  const { push } = useHistory();
 
   const onChange = e => {
     const { name, value } = e.target;
@@ -65,6 +67,10 @@ export const CardAdd = props => {
       .catch(error => {
         console.log(error);
       });
+  };
+
+  const pushToDash = () => {
+    push('/dashboard');
   };
 
   return (
@@ -105,6 +111,7 @@ export const CardAdd = props => {
         style={{ display: 'flex', margin: '40px auto' }}
         disabled={disabled}
       />
+      <button onClick = {pushToDash}>Back</button>
     </form>
   );
 };

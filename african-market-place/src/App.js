@@ -1,6 +1,6 @@
 import { Route, Switch } from 'react-router-dom';
 
-// import { CardAdd } from './components/common/CardAdd';
+import { CardAdd } from './components/common/CardAdd';
 import { CardEdit } from './components/common/CardEdit';
 import UserDashboard from './components/pages/Dashboard';
 import { LandingPage } from './components/pages/Landing';
@@ -22,6 +22,7 @@ export default function mainApp() {
       <PrivateRoute exact path = '/dashboard' component = {UserDashboard} />
       <PrivateRoute exact path = '/marketplace' component = {Marketplace} />
       <PrivateRoute exact path = '/edititem' component = {CardEdit} />
+      <PrivateRoute exact path = '/additem' component = {CardAdd} />
       <Route component={NotFoundPage} />
  
     </Switch>

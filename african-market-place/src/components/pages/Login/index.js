@@ -44,9 +44,9 @@ export const LoginPage = () => {
         loginFormValues
       )
       .then(response => {
-        console.log(response);
+        console.log(response.data);
         localStorage.setItem('token', response.data.token);
-        push('/dashboard');
+        push('/marketplace');
       })
       .catch(error => {
         console.log(error);

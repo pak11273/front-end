@@ -1,7 +1,7 @@
 import * as yup from 'yup';
 
 import React, { useState } from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { useHistory, useLocation, useParams } from 'react-router-dom';
 
 import Button from './Button';
 import { CardDropdown } from './CardDropdown';
@@ -22,6 +22,7 @@ const initialValues = {
 export const CardEdit = props => {
   const { id } = useParams();
   const { state } = useLocation();
+  const { push } = useHistory();
 
   const [ProductValues, setProductValues] = useState(initialValues);
   const [errors, setErrors] = useState({
@@ -72,6 +73,10 @@ export const CardEdit = props => {
     //   });
   };
 
+  const pushToDash = () => {
+    push('/dashboard');
+  };
+
   return (
     <form onSubmit={onSubmit}>
       <div
@@ -111,6 +116,7 @@ export const CardEdit = props => {
         style={{ display: 'flex', margin: '40px auto' }}
         disabled={disabled}
       />
+      <button onClick = {pushToDash}>Back</button>
     </form>
   );
 };

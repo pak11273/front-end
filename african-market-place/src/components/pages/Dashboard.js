@@ -38,6 +38,8 @@ function UserDashboard(){
         <div style = {{textAlign: 'center'}}>
             <div>
                 <h2>Your Listings</h2>
+                <button onClick = {pushToAddItem}>Add Listing</button>
+                <br/>
                 {/* map of users items from API call */}
                 <div>
                 <p> Name: Apple| Price: .99| Category: Fruit
