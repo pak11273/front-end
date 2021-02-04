@@ -1,8 +1,8 @@
 import { Route, Switch } from 'react-router-dom';
 
-import { CardAdd } from './components/common/BackupCardAdd';
+// import { CardAdd } from './components/common/CardAdd';
 import { CardEdit } from './components/common/CardEdit';
-import Dashboard from './components/pages/Dashboard';
+import UserDashboard from './components/pages/Dashboard';
 import { LandingPage } from './components/pages/Landing';
 import { LoginPage } from './components/pages/Login';
 import { NotFoundPage } from './components/pages/NotFound';
@@ -19,7 +19,7 @@ export default function mainApp() {
       <Route exact path = '/signup' component = {SignUpPage} />
       <Route exact path = '/success' component = {SignUpCompleted} />
       <Route exact path = '/login' component = {LoginPage} />
-      <PrivateRoute exact path = '/dashboard' component = {Dashboard} />
+      <PrivateRoute exact path = '/dashboard' component = {UserDashboard} />
       <PrivateRoute exact path = '/marketplace' component = {Marketplace} />
       <PrivateRoute exact path = '/edititem' component = {CardEdit} />
       <Route component={NotFoundPage} />

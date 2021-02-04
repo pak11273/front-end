@@ -10,11 +10,20 @@ import { CardSchema } from '../../schema';
 
 // import axios from 'axios';
 
+const initialValues = {
+  id: '',
+  item_name: '',
+  item_category: '',
+  item_price: '',
+  item_qty: '',
+  item_qty_measurement: '',
+};
+
 export const CardEdit = props => {
   const { id } = useParams();
   const { state } = useLocation();
 
-  const [ProductValues, setProductValues] = useState(state);
+  const [ProductValues, setProductValues] = useState(initialValues);
   const [errors, setErrors] = useState({
     id: '',
     item_name: '',
