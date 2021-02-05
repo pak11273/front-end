@@ -1,12 +1,11 @@
 import * as yup from 'yup';
-
 import React, { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-
 import Button from './Button';
 import { CardDropdown } from './CardDropdown';
 import { CardInput } from './CardInput';
 import { CardSchema } from '../../schema';
+import { axiosWithAuth } from "../../utils/axiosWithAuth";
 
 // import axios from 'axios';
 
@@ -21,7 +20,6 @@ const initialValues = {
 
 export const CardEdit = props => {
   const { id } = useParams();
-  // const { state } = useLocation();
   const { push } = useHistory();
 
   const [ProductValues, setProductValues] = useState(initialValues);
@@ -63,14 +61,16 @@ export const CardEdit = props => {
   const onSubmit = e => {
     e.preventDefault();
     console.log(ProductValues);
-    // axios
-    //   .post('', ProductValues)
-    //   .then(response => {
-    //     // pending
-    //   })
-    //   .catch(error => {
-    //     console.log(error);
-    //   });
+    axiosWithAuth()
+    .put(`https://african-marketplace-tt14.herokuapp.com/api/items/${id}`,ProductValues)
+    .then(res => {
+      //dispatch(editItem(res.data))
+      //getting 500 error from server
+      console.log(res);
+    })
+    .catch(err => {
+      console.log(err);
+    });
   };
 
   const pushToDash = () => {

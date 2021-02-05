@@ -4,15 +4,24 @@ import { axiosWithAuth } from '../../utils/axiosWithAuth';
 // import { deleteItem } from "../../utils/actions";
 // import { useDispatch } from 'react-redux';
 
-function UserDashboard(){
+function UserDashboard(props){
   const [state , setState] = useState([]);
+  const [message , setMessage ] = useState("");
     const { push } = useHistory();
     // const { dispatch } = useDispatch();
   
+    const values = {
+      user_id: props.user_id,
+      item_id: props.item_id,
+    };
+
     useEffect(() => {
       axiosWithAuth()
-      .get("https://african-marketplace-tt14.herokuapp.com/api/userItems/2/list")
+      .post("https://african-marketplace-tt14.herokuapp.com/api/userItems/addItems",values)
       .then(res => {
+        //dispatch(addItem(res.data))
+        // keeping state so code wont break
+        //post would not work because a different endpoint is giving a 500 error so const values is undefined
         setState(res.data);
         console.log(state);
       })
@@ -48,6 +57,7 @@ function UserDashboard(){
       .then((res) =>{
           console.log(res);
           console.log(state);
+          setMessage(res.data.message);
           //dispatch(deleteItem(res.data)); 
           //doesn't work because the only response recieved is a success message is recieved
           //cannot use our dispatch  and the server won't delete it
@@ -72,6 +82,7 @@ function UserDashboard(){
                    </p>
                  ))} 
                </div>
+               <p>{message}</p>
             </div>
             <button onClick = {pushToMarketplace}> ⇦ Marketplace</button>
             <button onClick = {logOutButton}>Log Out</button>
@@ -79,5 +90,14 @@ function UserDashboard(){
     );
 };
 
+// const mapStateToProps = (state) => {
+//   return {
+//   user_id: state.user_id,
+//   items: state.items,
+//   item_id: state.item_id,
+//}
+//};
+
+// export default connect(mapStateToProps,{addItem,deleteItem})(UserDashboard)
 
 export default UserDashboard;

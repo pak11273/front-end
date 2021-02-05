@@ -5,16 +5,18 @@ import {
     EDIT_ITEM,
     DELETE_ITEM,
     ADD_ITEM,
+    ITEM_ID,
 } from "./actions";
 const initialUserState = {
-    id: "",
-    username: "",
+    item_id: [],
+    user_id: "",
     items: [],
 };
 const reducer = (state = initialUserState, action) => {
     switch (action.type) {
       case SAVE_USER:
-        return action.payload;
+        return {...state,
+        user_id: action.payload};
       case EDIT_ITEM:
         const newState = { ...state };
         newState.items.forEach((item) => {
@@ -35,6 +37,10 @@ const reducer = (state = initialUserState, action) => {
         const newItemAdded = { ...state };
         newItemAdded.items.push(action.payload);
         return newItemAdded;
+      case ITEM_ID:
+        const newItemId = { ...state };
+        newItemId.item_id.push(action.payload);
+        return newItemId;   
       default:
         return state;
     }

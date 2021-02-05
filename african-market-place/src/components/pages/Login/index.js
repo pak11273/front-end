@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 import { loginSchema } from '../../../schema';
+import { useDispatch } from "react-redux";
+import { saveUser } from '../../../utils/actions';
 
 export const LoginPage = () => {
   const initialForm = {
@@ -20,6 +22,7 @@ export const LoginPage = () => {
   const [disabled, setDisabled] = useState(true);
   const [loginErrors, setLoginErrors] = useState(errors);
   const {push} = useHistory();
+  const {dispatch} = useDispatch();
   
   useEffect(() => {
     loginSchema.isValid(loginFormValues).then(valid => {
@@ -46,6 +49,7 @@ export const LoginPage = () => {
       .then(response => {
         console.log(response.data);
         localStorage.setItem('token', response.data.token);
+        dispatch(saveUser(response.data.allegedUser.id));
         push('/marketplace');
       })
       .catch(error => {

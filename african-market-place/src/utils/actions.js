@@ -2,6 +2,7 @@ export const SAVE_USER = "SAVE_USER";
 export const EDIT_ITEM = "EDIT_ITEM";
 export const DELETE_ITEM = "DELETE_ITEM";
 export const ADD_ITEM = "ADD_ITEM";
+export const ITEM_ID = "ITEM_ID";
 export const saveUser = (user) => {
   return {
     type: SAVE_USER,
@@ -25,4 +26,10 @@ export const addItem = (itemWithUserId) => {
     type: ADD_ITEM,
     payload: itemWithUserId,
   };
+};
+export const itemId = (itemID) => {
+    return {
+        type: ITEM_ID,
+        payload: itemID,
+    };
 };
