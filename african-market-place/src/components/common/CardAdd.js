@@ -6,11 +6,11 @@ import Button from './Button';
 import { CardDropdown } from './CardDropdown';
 import { CardInput } from './CardInput';
 import { CardSchema } from '../../schema';
-import axios from 'axios';
+import { axiosWithAuth } from "../../utils/axiosWithAuth";
 import { useHistory } from 'react-router-dom';
 
 const initialState = {
-  id: '',
+  
   item_name: '',
   item_category: '',
   item_price: '',
@@ -21,7 +21,7 @@ const initialState = {
 export const CardAdd = props => {
   const [ProductValues, setProductValues] = useState(initialState);
   const [errors, setErrors] = useState({
-    id: '',
+    
     item_name: '',
     item_category: '',
     item_price: '',
@@ -32,7 +32,16 @@ export const CardAdd = props => {
   const { push } = useHistory();
 
   const onChange = e => {
-    const { name, value } = e.target;
+    // const { name, value } = e.target;
+    let name = e.target.name;
+    let value = e.target.value;
+    if(name === "item_qty"){
+      value = parseInt(value, 10);
+    } else if(name === "item_price"){
+      value = parseInt(value, 10);
+    }else{
+      value = value;
+    };
     setProductValues({
       ...ProductValues,
       [name]: value,
@@ -59,10 +68,11 @@ export const CardAdd = props => {
   const onSubmit = e => {
     e.preventDefault();
     console.log(ProductValues);
-    axios
-      .post('', ProductValues)
+    axiosWithAuth()
+      .post("https://african-marketplace-tt14.herokuapp.com/api/items", ProductValues)
       .then(response => {
-        // pending
+        console.log(response);
+        push("/dashboard");
       })
       .catch(error => {
         console.log(error);

@@ -20,6 +20,7 @@ function Marketplace() {
     const pushToDash = () => {
         push('/dashboard');
     };
+    console.log(list);
     
     return(
         <div style={{ textAlign: 'center' }}>
