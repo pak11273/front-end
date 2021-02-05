@@ -1,7 +1,7 @@
 import * as yup from 'yup';
 
 import React, { useState } from 'react';
-import { useHistory, useLocation, useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 
 import Button from './Button';
 import { CardDropdown } from './CardDropdown';
@@ -21,7 +21,7 @@ const initialValues = {
 
 export const CardEdit = props => {
   const { id } = useParams();
-  const { state } = useLocation();
+  // const { state } = useLocation();
   const { push } = useHistory();
 
   const [ProductValues, setProductValues] = useState(initialValues);

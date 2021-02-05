@@ -40,7 +40,7 @@ export const CardAdd = props => {
     } else if(name === "item_price"){
       value = parseInt(value, 10);
     }else{
-      value = value;
+      return value;
     };
     setProductValues({
       ...ProductValues,

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
-import { deleteItem } from "../../utils/actions";
-import { useDispatch } from 'react-redux';
+// import { deleteItem } from "../../utils/actions";
+// import { useDispatch } from 'react-redux';
 
 function UserDashboard(){
   const [state , setState] = useState([]);
     const { push } = useHistory();
-    const { dispatch } = useDispatch();
+    // const { dispatch } = useDispatch();
   
     useEffect(() => {
       axiosWithAuth()
@@ -19,6 +19,7 @@ function UserDashboard(){
       .catch(err => {
         console.log(err);
       });
+      // eslint-disable-next-line
     },[]);
   
   const logOutButton = () => {
