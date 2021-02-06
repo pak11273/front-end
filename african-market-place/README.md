@@ -6,8 +6,6 @@ For steps on how to work with this repository [please see here](https://docs.lab
 
 # buildwkone
 
-
-
 You can find the deployed project at [🚫URL NAME GOES HERE](🚫copy and paste URL here).
 
 ## Contributors
@@ -48,19 +46,26 @@ You can find the deployed project at [🚫URL NAME GOES HERE](🚫copy and paste
 
 #### Front end deployed to `🚫insert hosting service here`
 
+vercel
+
 #### [Back end](🚫link to back end repo here) built using:
+
+heroku
 
 #### 🚫 back end framework goes here
 
-- point one
-- point two
-- point three
+- Node
+- ExpressJS
 
 🚫 List the rest of the back end end features and libraries in the same format as the framework above
+
+- SQL database
+- Knex ORM
 
 #### Documentation
 
 See [Backend Documentation](🚫*link to your backend API SWAGGER DOCS here*) for details on the backend of our project.
+https://app.swaggerhub.com/apis-docs/rbhouck32/African-MarketPlace/1.0.0#/
 
 # APIs
 
