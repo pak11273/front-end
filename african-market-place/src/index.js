@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { UserProvider } from './utils/UserContext';
 import { createStore } from 'redux';
 import reducer from './utils/reducer';
 
@@ -18,14 +19,16 @@ const store = createStore(
 ReactDOM.render(
   <Router>
     <React.StrictMode>
-      <div className="landing is-preload">
-        <div id="page-wrapper">
+      <Provider store={store}>
+        <UserProvider>
           <Header />
-          <Provider store={store}>
-            <App />
-          </Provider>
-        </div>
-      </div>
+          <div className="landing is-preload">
+            <div id="page-wrapper">
+              <App />
+            </div>
+          </div>
+        </UserProvider>
+      </Provider>
     </React.StrictMode>
   </Router>,
   document.getElementById('root')

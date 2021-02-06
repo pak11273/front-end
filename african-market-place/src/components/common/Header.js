@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react';
+import { useUpdateLogin, useUser } from '../../utils/UserContext';
 
 import { Link } from 'react-router-dom';
 
 const Header = props => {
+  const loggedIn = useUser();
+  const removeToken = useUpdateLogin();
   useEffect(() => {
     let cb = function (e) {
       let menu = document.querySelector('#menu');
@@ -20,18 +23,9 @@ const Header = props => {
     );
   });
 
-  let loggedIn = localStorage.getItem('token');
-  console.log(loggedIn);
-  const NotLoggedIn = (
-    <>
-      <li>
-        <Link to="/signup">Sign Up</Link>
-      </li>
-      <li>
-        <Link to="/login">Log In</Link>
-      </li>
-    </>
-  );
+  const logout = () => {
+    removeToken();
+  };
 
   const handleClick = () => {
     let menu = document.querySelector('#menu');
@@ -60,11 +54,28 @@ const Header = props => {
                     <li>
                       <a href="team.html">Meet the Team</a>
                     </li> */}
-                {/* {loggedIn !== 'null' && <NotLoggedIn />} */}
-                {loggedIn != null && (
+                {!loggedIn && (
                   <li>
                     {' '}
-                    <Link to="/logout">Log Out</Link>{' '}
+                    <Link to="/signup" onClick={logout}>
+                      Sign Up
+                    </Link>{' '}
+                  </li>
+                )}
+                {!loggedIn && (
+                  <li>
+                    {' '}
+                    <Link to="/login" onClick={logout}>
+                      Log In
+                    </Link>{' '}
+                  </li>
+                )}
+                {loggedIn && (
+                  <li>
+                    {' '}
+                    <Link to="/logout" onClick={logout}>
+                      Log Out
+                    </Link>{' '}
                   </li>
                 )}
               </ul>
