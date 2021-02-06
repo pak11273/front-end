@@ -5,7 +5,7 @@ import Button from './Button';
 import { CardDropdown } from './CardDropdown';
 import { CardInput } from './CardInput';
 import { CardSchema } from '../../schema';
-import { axiosWithAuth } from "../../utils/axiosWithAuth";
+import { axiosWithAuth } from '../../utils/axiosWithAuth';
 
 // import axios from 'axios';
 
@@ -62,15 +62,18 @@ export const CardEdit = props => {
     e.preventDefault();
     console.log(ProductValues);
     axiosWithAuth()
-    .put(`https://african-marketplace-tt14.herokuapp.com/api/items/${id}`,ProductValues)
-    .then(res => {
-      //dispatch(editItem(res.data))
-      //getting 500 error from server
-      console.log(res);
-    })
-    .catch(err => {
-      console.log(err);
-    });
+      .put(
+        `https://african-marketplace-tt14.herokuapp.com/api/items/${id}`,
+        ProductValues
+      )
+      .then(res => {
+        //dispatch(editItem(res.data))
+        //getting 500 error from server
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   const pushToDash = () => {
@@ -116,7 +119,7 @@ export const CardEdit = props => {
         style={{ display: 'flex', margin: '40px auto' }}
         disabled={disabled}
       />
-      <button onClick = {pushToDash}>Back</button>
+      <button onClick={pushToDash}>Back</button>
     </form>
   );
 };

@@ -7,12 +7,11 @@ import Button from './Button';
 import { CardDropdown } from './CardDropdown';
 import { CardInput } from './CardInput';
 import { CardSchema } from '../../schema';
-import { axiosWithAuth } from "../../utils/axiosWithAuth";
+import { axiosWithAuth } from '../../utils/axiosWithAuth';
 import { useHistory } from 'react-router-dom';
 // import { connect } from 'react-redux';
 
 const initialState = {
-  
   item_name: '',
   item_category: '',
   item_price: '',
@@ -23,7 +22,6 @@ const initialState = {
 export const CardAdd = props => {
   const [ProductValues, setProductValues] = useState(initialState);
   const [errors, setErrors] = useState({
-    
     item_name: '',
     item_category: '',
     item_price: '',
@@ -37,15 +35,14 @@ export const CardAdd = props => {
     // const { name, value } = e.target;
     let name = e.target.name;
     let value = e.target.value;
-    if(name === "item_qty"){
+    if (name === 'item_qty') {
       value = parseInt(value, 10);
-    } else if(name === "item_price"){
+    } else if (name === 'item_price') {
       value = parseInt(value, 10);
-    }else{
+    } else {
       // eslint-disable-next-line
       value = value;
-      
-    };
+    }
     setProductValues({
       ...ProductValues,
       [name]: value,
@@ -73,14 +70,17 @@ export const CardAdd = props => {
     e.preventDefault();
     console.log(ProductValues);
     axiosWithAuth()
-      .post("https://african-marketplace-tt14.herokuapp.com/api/items", ProductValues)
+      .post(
+        'https://african-marketplace-tt14.herokuapp.com/api/items',
+        ProductValues
+      )
       .then(response => {
         console.log(response);
         //dispatch(addItem(res.data))
         //dspatch(itemid(res.data.id))
         //not sure what kind of obj we get
         //tying to manage the state of itemId getting 500 error
-        push("/dashboard");
+        push('/dashboard');
       })
       .catch(error => {
         console.log(error);
@@ -129,7 +129,7 @@ export const CardAdd = props => {
         style={{ display: 'flex', margin: '40px auto' }}
         disabled={disabled}
       />
-      <button onClick = {pushToDash}>Back</button>
+      <button onClick={pushToDash}>Back</button>
     </form>
   );
 };

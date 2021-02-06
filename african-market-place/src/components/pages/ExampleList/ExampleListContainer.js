@@ -4,7 +4,6 @@ import RenderExampleListPage from './RenderExampleListPage';
 
 // import { getExampleData } from '../../../api';
 
-
 // Here is an example of using our reusable List component to display some list data to the UI.
 const ExampleList = () => {
   return (
