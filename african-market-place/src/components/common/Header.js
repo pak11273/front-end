@@ -19,6 +19,20 @@ const Header = props => {
       []
     );
   });
+
+  let loggedIn = localStorage.getItem('token');
+  console.log(loggedIn);
+  const NotLoggedIn = (
+    <>
+      <li>
+        <Link to="/signup">Sign Up</Link>
+      </li>
+      <li>
+        <Link to="/login">Log In</Link>
+      </li>
+    </>
+  );
+
   const handleClick = () => {
     let menu = document.querySelector('#menu');
     menu.style.transform = 'translateX(0)';
@@ -46,12 +60,13 @@ const Header = props => {
                     <li>
                       <a href="team.html">Meet the Team</a>
                     </li> */}
-                <li>
-                  <Link to="/signup">Sign Up</Link>
-                </li>
-                <li>
-                  <Link to="/login">Log In</Link>
-                </li>
+                {/* {loggedIn !== 'null' && <NotLoggedIn />} */}
+                {loggedIn != null && (
+                  <li>
+                    {' '}
+                    <Link to="/logout">Log Out</Link>{' '}
+                  </li>
+                )}
               </ul>
             </div>
           </li>
