@@ -1,6 +1,7 @@
 import * as yup from 'yup';
 
 import React, { useState } from 'react';
+
 // import { addItem, itemId } from "../../utils/actions";
 // import { useDispatch } from "react-redux";
 import Button from './Button';
@@ -9,6 +10,7 @@ import { CardInput } from './CardInput';
 import { CardSchema } from '../../schema';
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
 import { useHistory } from 'react-router-dom';
+
 // import { connect } from 'react-redux';
 
 const initialState = {
@@ -68,14 +70,12 @@ export const CardAdd = props => {
 
   const onSubmit = e => {
     e.preventDefault();
-    console.log(ProductValues);
     axiosWithAuth()
       .post(
         'https://african-marketplace-tt14.herokuapp.com/api/items',
         ProductValues
       )
       .then(response => {
-        console.log(response);
         //dispatch(addItem(res.data))
         //dspatch(itemid(res.data.id))
         //not sure what kind of obj we get
