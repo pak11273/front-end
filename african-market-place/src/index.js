@@ -1,4 +1,5 @@
-import './assets/css/main.css';
+// import './assets/css/main.css';
+import './assets/sass/main.scss';
 
 import App from './App';
 import { Header } from './components/common';
@@ -21,9 +22,9 @@ ReactDOM.render(
     <React.StrictMode>
       <Provider store={store}>
         <UserProvider>
-          <Header />
           <div className="landing is-preload">
             <div id="page-wrapper">
+              <Header />
               <App />
             </div>
           </div>
