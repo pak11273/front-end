@@ -22,7 +22,7 @@
     "func-names": 0,
     "jsx-a11y/anchor-is-valid": 0,
     "no-case-declarations": 0,
-    "no-console": 1, 
+    "no-console": 0, 
     "no-underscore-dangle": 0,
     "prefer-destructuring": 0,
     "no-plusplus": 0,
