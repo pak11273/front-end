@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 import React from 'react';
 import pic1 from 'src/assets/images/pic01.jpeg';
@@ -179,17 +180,17 @@ function RenderLandingPage(props) {
       <section id="cta" className="wrapper style4">
         <div className="inner">
           <header>
-            <h2>Arcue ut vel commodo</h2>
+            <h2>Registration</h2>
             <p>
-              Aliquam ut ex ut augue consectetur interdum endrerit imperdiet
-              amet eleifend fringilla.
+              Registration is Free. Sign up to visit The Market where you can
+              display your products and see what other businesses are offering.
             </p>
           </header>
           <ul className="actions stacked">
             <li>
-              <a href="#" className="button fit primary">
-                Activate
-              </a>
+              <Link className="button fit primary" to="/signup">
+                Sign Up
+              </Link>
             </li>
             <li>
               <a href="#" className="button fit">
@@ -199,36 +200,6 @@ function RenderLandingPage(props) {
           </ul>
         </div>
       </section>
-
-      <footer id="footer">
-        <ul className="icons">
-          <li>
-            <a href="#" className="icon brands fa-twitter">
-              <span className="label">Twitter</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" className="icon brands fa-facebook-f">
-              <span className="label">Facebook</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" className="icon brands fa-instagram">
-              <span className="label">Instagram</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" className="icon brands fa-dribbble">
-              <span className="label">Dribbble</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" className="icon solid fa-envelope">
-              <span className="label">Email</span>
-            </a>
-          </li>
-        </ul>
-      </footer>
     </>
   );
 }

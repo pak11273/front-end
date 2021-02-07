@@ -33,8 +33,8 @@ function Marketplace() {
           gain other insights to help their business grow.
         </p>
       </header>
-      <section class="wrapper style5">
-        <div class="inner">
+      <section className="wrapper style5">
+        <div className="inner">
           <h3>Business Owners</h3>
           <p>Register your products and get them listed here</p>
           <button style={{ marginBottom: '20px' }} onClick={pushToDash}>

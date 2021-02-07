@@ -1,26 +1,26 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 
 export const Card = props => {
-  const { push } = useHistory();
+  // const { push } = useHistory();
 
-  const pushToEditItem = (e, props) => {
-    push(`/edititem/${props.id}`, props);
-  };
+  // const pushToEditItem = (e, props) => {
+  //   push(`/edititem/${props.id}`, props);
+  // };
 
-  const pushToDeleteItem = (e, props) => {
-    push(`/deleteitem/${props.id}`, props);
-    //add axios call
-    // axiosWithAuth()
-    //   .delete(`https://african-marketplace-tt14.herokuapp.com/${id}`)
-    //   .then(res => {
-    //     console.log(res);
-    //     dispatch(deleteItem(id));
-    //   })
-    //   .catch(err => {
-    //     console.log(err);
-    //   });
-  };
+  // const pushToDeleteItem = (e, props) => {
+  //   push(`/deleteitem/${props.id}`, props);
+  //   //add axios call
+  //   // axiosWithAuth()
+  //   //   .delete(`https://african-marketplace-tt14.herokuapp.com/${id}`)
+  //   //   .then(res => {
+  //   //     console.log(res);
+  //   //     dispatch(deleteItem(id));
+  //   //   })
+  //   //   .catch(err => {
+  //   //     console.log(err);
+  //   //   });
+  // };
 
   const {
     id,

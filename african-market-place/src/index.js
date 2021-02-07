@@ -2,6 +2,7 @@
 import './assets/sass/main.scss';
 
 import App from './App';
+import { Footer } from './components/common/Footer';
 import { Header } from './components/common';
 import { Provider } from 'react-redux';
 import React from 'react';
@@ -26,6 +27,7 @@ ReactDOM.render(
             <div id="page-wrapper">
               <Header />
               <App />
+              <Footer />
             </div>
           </div>
         </UserProvider>
