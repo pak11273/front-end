@@ -48,12 +48,6 @@ const Header = props => {
                 <li>
                   <Link to="/">Home</Link>
                 </li>
-                {/* <li>
-                      <a href="about.html">About Us</a>
-                    </li>
-                    <li>
-                      <a href="team.html">Meet the Team</a>
-                    </li> */}
                 {!loggedIn && (
                   <li>
                     {' '}
@@ -68,6 +62,12 @@ const Header = props => {
                     <Link to="/login" onClick={logout}>
                       Log In
                     </Link>{' '}
+                  </li>
+                )}
+                {loggedIn && (
+                  <li>
+                    {' '}
+                    <Link to="/marketplace">The Market</Link>{' '}
                   </li>
                 )}
                 {loggedIn && (
