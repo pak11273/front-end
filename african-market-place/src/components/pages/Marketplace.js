@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+import { Card } from 'src/components/common/Card';
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
 import { useHistory } from 'react-router-dom';
 
@@ -23,21 +24,41 @@ function Marketplace() {
   };
 
   return (
-    <div style={{ textAlign: 'center' }}>
-      <h2>Marketplace Items</h2>
-      <button style={{ marginBottom: '20px' }} onClick={pushToDash}>
-        Profile
-      </button>
-      {list.map(item => {
-        return (
-          <p key={item.id} style={{ border: '1px solid white' }}>
-            Name: {item.item_name}| Price: {item.item_price}| Category:{' '}
-            {item.item_category}
-          </p>
-        );
-      })}
-      ;
-    </div>
+    <article id="main">
+      <header>
+        <h2>The Market</h2>
+        <p>
+          The Market is an area where small business owners can trade and market
+          their products. They can also see what their competitors offer and
+          gain other insights to help their business grow.
+        </p>
+      </header>
+      <section class="wrapper style5">
+        <div class="inner">
+          <h3>Business Owners</h3>
+          <p>Register your products and get them listed here</p>
+          <button style={{ marginBottom: '20px' }} onClick={pushToDash}>
+            My Products
+          </button>
+        </div>
+      </section>
+      <section
+        style={{ display: 'flex', flexFlow: 'row wrap', margin: '3rem' }}
+      >
+        {list.map(item => {
+          return (
+            <Card
+              key={item.id}
+              item_name={item.item_name}
+              item_price={item.item_price}
+              item_qty={item.item_qty}
+              item_qty_measurement={item.item_qty_measurement}
+              item_category={item.item_category}
+            />
+          );
+        })}
+      </section>
+    </article>
   );
 }
 export default Marketplace;
