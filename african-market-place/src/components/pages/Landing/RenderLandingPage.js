@@ -1,5 +1,8 @@
 // import { Link } from 'react-router-dom';
 import React from 'react';
+import pic1 from 'src/assets/images/pic01.jpeg';
+import pic2 from 'src/assets/images/pic02.jpeg';
+import pic3 from 'src/assets/images/pic03.jpeg';
 
 function RenderLandingPage(props) {
   return (
@@ -66,7 +69,7 @@ function RenderLandingPage(props) {
       <section id="two" className="wrapper alt style2">
         <section className="spotlight">
           <div className="image">
-            <img src="images/pic01.jpeg" alt="" />
+            <img src={pic1} alt="" />
           </div>
           <div className="content">
             <h2>
@@ -82,7 +85,7 @@ function RenderLandingPage(props) {
         </section>
         <section className="spotlight">
           <div className="image">
-            <img src="images/pic02.jpeg" alt="" />
+            <img src={pic2} alt="" />
           </div>
           <div className="content">
             <h2>
@@ -98,7 +101,7 @@ function RenderLandingPage(props) {
         </section>
         <section className="spotlight">
           <div className="image">
-            <img src="images/pic03.jpeg" alt="" />
+            <img src={pic3} alt="" />
           </div>
           <div className="content">
             <h2>
