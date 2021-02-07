@@ -1,16 +1,17 @@
 import React from 'react';
 
 export const SignupInput = ({ api, name, value, error, onChange }) => {
+  let type;
+  if (api === 'confirm' || api === 'password') {
+    type = 'password';
+  } else {
+    type = 'text';
+  }
   return (
-    <div>
-      <label
-        style={{
-          maxWidth: '200px',
-          margin: '40px auto',
-        }}
-      >
+    <div className="signup_input">
+      <label>
         <input
-          type="text"
+          type={type}
           name={api}
           value={value}
           onChange={onChange}

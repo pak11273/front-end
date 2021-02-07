@@ -1,0 +1,31 @@
+.signup_inner {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+#signup {
+  display: 'flex';
+  flex-wrap: 'wrap';
+  justify-content: 'space-evenly';
+  max-width: '550px';
+  margin: '0 auto';
+}
+
+.signup_row {
+  display: flex;
+  flex-flow: column wrap;
+
+  @media (min-width: 570px) {
+    flex-flow: row wrap;
+  }
+}
+.signup_input {
+  height: 100px;
+  min-width: 200px;
+
+  label {
+    max-width: 200px;
+    margin: 0.5rem 1rem;
+  }
+}

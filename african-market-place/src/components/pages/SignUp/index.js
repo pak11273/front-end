@@ -13,6 +13,7 @@ export const SignUpPage = () => {
     email: '',
     country: '',
     password: '',
+    confirm: '',
     first_name: '',
     last_name: '',
     user_role: '',
@@ -22,6 +23,7 @@ export const SignUpPage = () => {
     username: '',
     email: '',
     password: '',
+    confirm: '',
     country: '',
     first_name: '',
     last_name: '',
@@ -82,37 +84,57 @@ export const SignUpPage = () => {
       <div className="landing is-preload">
         <section id="banner" style={{ height: '100%' }}>
           <form style={{ margin: '90px 0 2em 0' }} onSubmit={onSubmit}>
-            <div className="inner">
+            <div className="inner signup_inner">
               <h2>Sign Up</h2>
-              <div style={{ flexDirection: 'column' }}>
-                <SignupInput
-                  name="Username"
-                  api="username"
-                  value={signUpFormValues.username}
-                  error={signUpErrors.username}
-                  onChange={onChange}
-                />
-                <SignupInput
-                  name="First Name"
-                  api="first_name"
-                  value={signUpFormValues.first_name}
-                  error={signUpErrors.first_name}
-                  onChange={onChange}
-                />
-                <SignupInput
-                  name="Last Name"
-                  api="last_name"
-                  value={signUpFormValues.last_name}
-                  error={signUpErrors.last_name}
-                  onChange={onChange}
-                />
-                <SignupInput
-                  name="Email"
-                  api="email"
-                  value={signUpFormValues.email}
-                  error={signUpErrors.email}
-                  onChange={onChange}
-                />
+              <div className="signup">
+                <div className="signup_row">
+                  <SignupInput
+                    name="First Name"
+                    api="first_name"
+                    value={signUpFormValues.first_name}
+                    error={signUpErrors.first_name}
+                    onChange={onChange}
+                  />
+                  <SignupInput
+                    name="Last Name"
+                    api="last_name"
+                    value={signUpFormValues.last_name}
+                    error={signUpErrors.last_name}
+                    onChange={onChange}
+                  />
+                </div>
+                <div className="signup_row">
+                  <SignupInput
+                    name="Username"
+                    api="username"
+                    value={signUpFormValues.username}
+                    error={signUpErrors.username}
+                    onChange={onChange}
+                  />
+                  <SignupInput
+                    name="Email"
+                    api="email"
+                    value={signUpFormValues.email}
+                    error={signUpErrors.email}
+                    onChange={onChange}
+                  />
+                </div>
+                <div className="signup_row">
+                  <SignupInput
+                    name="Password"
+                    api="password"
+                    value={signUpFormValues.password}
+                    error={signUpErrors.password}
+                    onChange={onChange}
+                  />
+                  <SignupInput
+                    name="Confirm Password"
+                    api="confirm"
+                    value={signUpFormValues.confirm}
+                    error={signUpErrors.confirm}
+                    onChange={onChange}
+                  />
+                </div>
                 <SignupInput
                   name="Country"
                   api="country"
@@ -120,44 +142,37 @@ export const SignUpPage = () => {
                   error={signUpErrors.country}
                   onChange={onChange}
                 />
-                <SignupInput
-                  name="Password"
-                  api="password"
-                  value={signUpFormValues.password}
-                  error={signUpErrors.password}
+              </div>
+              <label
+                style={{
+                  maxWidth: '200px',
+                  margin: '40px auto',
+                }}
+              >
+                {' '}
+                Market Owner?
+                <input
+                  style={{
+                    opacity: 1,
+                    height: '20px',
+                    marginRight: '10px',
+                    width: '20px',
+                    border: '1px solid white',
+                    appearance: 'auto',
+                  }}
+                  type="checkbox"
+                  name="user_role"
+                  value={signUpFormValues.user_role}
                   onChange={onChange}
                 />
-                <label
-                  style={{
-                    maxWidth: '200px',
-                    margin: '40px auto',
-                  }}
-                >
-                  {' '}
-                  Market Owner?
-                  <input
-                    style={{
-                      opacity: 1,
-                      height: '20px',
-                      marginRight: '10px',
-                      width: '20px',
-                      border: '1px solid white',
-                      appearance: 'auto',
-                    }}
-                    type="checkbox"
-                    name="user_role"
-                    value={signUpFormValues.user_role}
-                    onChange={onChange}
-                  />
-                </label>
-                <ul className="actions special">
-                  <li>
-                    <button className="button primary" disabled={disabled}>
-                      Sign Up
-                    </button>
-                  </li>
-                </ul>
-              </div>
+              </label>
+              <ul className="actions special">
+                <li>
+                  <button className="button primary" disabled={disabled}>
+                    Sign Up
+                  </button>
+                </li>
+              </ul>
             </div>
           </form>
         </section>

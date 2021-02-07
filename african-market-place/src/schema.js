@@ -10,8 +10,10 @@ let schema = yup.object().shape({
   last_name: yup.string().max(30).required('last name is required'),
   email: yup.string().max(40).required('email is required'),
   country: yup.string().max(30).required('country is required'),
-  password: yup.string().max(40).required('password is required'),
-  // confirmPassword: yup.string().oneOf([yup.ref('password'), null], 'Passwords must match'),
+  password: yup.string().min(8).max(40).required('password is required'),
+  confirm: yup.string(),
+  // .oneOf([yup.ref('password'), null], 'Both passwords need to be the same')
+  // .required(),
   user_role: yup.boolean(),
 });
 
@@ -19,7 +21,6 @@ export const loginSchema = yup.object().shape({
   username: yup.string().min(6).max(40).required('username is required'),
   password: yup.string().max(40).required('password is required'),
 });
-
 export const CardSchema = yup.object().shape({
   id: yup.number().required('an id is required'),
   item_name: yup.string().max(255).required('a name is required'),
