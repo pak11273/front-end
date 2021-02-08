@@ -1712,11 +1712,13 @@ body.is-menu-visible {
   }
 
   &.alt {
-    background: transparent;
+    // background: transparent;
+    background: #2b343d;
+    opacity: 100%;
 
     h1 {
-      @include vendor('pointer-events', 'none');
-      opacity: 0;
+      @include vendor('pointer-events', 'cursor');
+      // opacity: 0;
     }
   }
 }
