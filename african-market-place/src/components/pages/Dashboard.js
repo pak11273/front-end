@@ -44,9 +44,9 @@ function UserDashboard(props) {
     push('/edititem');
   };
 
-  const pushToDash = () => {
-    push('/dashboard');
-  };
+  // const pushToDash = () => {
+  //   push('/dashboard');
+  // };
 
   const pushToMarketplace = () => {
     push('/marketplace');
