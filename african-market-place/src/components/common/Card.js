@@ -23,8 +23,9 @@ export const Card = props => {
   // };
 
   const {
-    id,
+    // id,
     item_name,
+    item_picUrl,
     item_category,
     item_price,
     item_qty,
@@ -32,19 +33,10 @@ export const Card = props => {
   } = props;
 
   return (
-    <div
-      style={{
-        padding: '20px',
-        margin: '20px auto',
-        background: 'black',
-        opacity: '80%',
-        borderRadius: '2%',
-        border: '1px solid white',
-        width: '300px',
-      }}
-    >
+    <div id="card">
+      <img src={item_picUrl} alt="apple-banana" />
       <h1>name: {item_name}</h1>
-      <h6>id: {id}</h6>
+      {/* if owner then show      <h6>id: {id}</h6> */}
       <h6>price: {item_price}</h6>
       <h6>quantity: {item_qty}</h6>
       <h6>measurement: {item_qty_measurement}</h6>
