@@ -2,14 +2,15 @@ import * as yup from 'yup';
 
 import React, { useState } from 'react';
 
-// import { addItem, itemId } from "../../utils/actions";
-// import { useDispatch } from "react-redux";
 import Button from './Button';
 import { CardDropdown } from './CardDropdown';
 import { CardInput } from './CardInput';
 import { CardSchema } from '../../schema';
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
 import { useHistory } from 'react-router-dom';
+
+// import { addItem, itemId } from "../../utils/actions";
+// import { useDispatch } from "react-redux";
 
 // import { connect } from 'react-redux';
 
@@ -92,45 +93,83 @@ export const CardAdd = props => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <div
+    <article id="main">
+      <header>
+        <h2>The Market</h2>
+        <p>
+          The Market is an area where small business owners can trade and market
+          their products. They can also see what their competitors offer and
+          gain other insights to help their business grow.
+        </p>
+      </header>
+      <section className="wrapper style5">
+        <div className="inner">
+          <h3>Add Items</h3>
+          <p>
+            Add Items to your listing so your customers and partners can see
+            what you have to offer
+          </p>
+          <button onClick={pushToDash}>Back</button>
+        </div>
+      </section>
+      <section
         style={{
-          margin: '100px auto 0',
-          width: '100%',
-          maxWidth: '300px',
+          justifyContent: 'center',
+          display: 'flex',
+          flexFlow: 'row wrap',
+          margin: '3rem',
         }}
       >
-        <CardInput label="name" product={ProductValues} onChange={onChange} />
-        <div style={{ color: 'red' }}>{errors.item_name}</div>
-        <CardInput label="price" product={ProductValues} onChange={onChange} />
-        <div style={{ color: 'red' }}>{errors.item_price}</div>
-        <CardInput
-          label="quantity"
-          product={ProductValues}
-          onChange={onChange}
-        />
-        <div style={{ color: 'red' }}>{errors.item_qty}</div>
-        <CardInput
-          label="measurement"
-          product={ProductValues}
-          onChange={onChange}
-        />
-        <div style={{ color: 'red' }}>{errors.item_qty_measurement}</div>
-        <CardDropdown
-          label="category"
-          product={ProductValues}
-          onChange={onChange}
-        />
-        <div style={{ color: 'red' }}>{errors.item_category}</div>
-      </div>
-      <Button
-        buttonText="Add Item"
-        classType="edit-item"
-        style={{ display: 'flex', margin: '40px auto' }}
-        disabled={disabled}
-      />
-      <button onClick={pushToDash}>Back</button>
-    </form>
+        <div>
+          <form onSubmit={onSubmit}>
+            <div
+              style={{
+                margin: '100px auto 0',
+                width: '100%',
+                maxWidth: '300px',
+              }}
+            >
+              <CardInput
+                label="name"
+                product={ProductValues}
+                onChange={onChange}
+              />
+              <div style={{ color: 'red' }}>{errors.item_name}</div>
+              <CardInput
+                label="price"
+                product={ProductValues}
+                onChange={onChange}
+              />
+              <div style={{ color: 'red' }}>{errors.item_price}</div>
+              <CardInput
+                label="quantity"
+                product={ProductValues}
+                onChange={onChange}
+              />
+              <div style={{ color: 'red' }}>{errors.item_qty}</div>
+              <CardInput
+                label="measurement"
+                product={ProductValues}
+                onChange={onChange}
+              />
+              <div style={{ color: 'red' }}>{errors.item_qty_measurement}</div>
+              <CardDropdown
+                label="category"
+                product={ProductValues}
+                onChange={onChange}
+              />
+              <div style={{ color: 'red' }}>{errors.item_category}</div>
+            </div>
+            <Button
+              buttonText="Add Item"
+              classType="edit-item"
+              style={{ display: 'flex', margin: '40px auto' }}
+              disabled={disabled}
+            />
+          </form>
+        </div>
+      </section>
+    </article>
   );
 };
 

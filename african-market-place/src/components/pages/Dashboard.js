@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
+import { useHistory } from 'react-router-dom';
+
 // import { deleteItem } from "../../utils/actions";
 // import { useDispatch } from 'react-redux';
 
@@ -34,17 +36,16 @@ function UserDashboard(props) {
     // eslint-disable-next-line
   }, []);
 
-  const logOutButton = () => {
-    localStorage.removeItem('token');
-    push('/login');
-  };
-
   const pushToAddItem = () => {
     push('/additem');
   };
 
   const pushToEditItem = () => {
     push('/edititem');
+  };
+
+  const pushToDash = () => {
+    push('/dashboard');
   };
 
   const pushToMarketplace = () => {
@@ -73,35 +74,53 @@ function UserDashboard(props) {
   };
 
   return (
-    <div style={{ textAlign: 'center' }}>
-      <div>
-        <h2>Your Listings</h2>
-        <button onClick={pushToAddItem}>Add Listing</button>
-        <br />
-        <div>
-          {state.map(item => (
-            <p key={item.item_id}>
-              {' '}
-              Name: {item.item_name}| Price: {item.item_price}| Qty:{' '}
-              {item.item_qty}
-              {item.item_qty_measurement}
-              <button onClick={pushToEditItem}>Edit Listing </button>
-              <button
-                onClick={e => {
-                  e.stopPropagation();
-                  pushToDeleteItem(item);
-                }}
-              >
-                Delete Listing
-              </button>
-            </p>
-          ))}
-        </div>
+    <>
+      <article id="main">
+        <header>
+          <h2>The Market</h2>
+          <p>
+            The Market is an area where small business owners can trade and
+            market their products. They can also see what their competitors
+            offer and gain other insights to help their business grow.
+          </p>
+        </header>
+        <section className="wrapper style5">
+          <div className="inner">
+            <h3>Your Listings</h3>
+            <p>Register your products and get them listed here</p>
+            <button style={{ margin: '0 20px 0' }} onClick={pushToAddItem}>
+              Add Listing
+            </button>
+            <button onClick={pushToMarketplace}> ⇦ Marketplace</button>
+          </div>
+        </section>
+        <section
+          style={{ display: 'flex', flexFlow: 'row wrap', margin: '3rem' }}
+        >
+          <br />
+          <div>
+            {state.map(item => (
+              <p key={item.item_id}>
+                {' '}
+                Name: {item.item_name}| Price: {item.item_price}| Qty:{' '}
+                {item.item_qty}
+                {item.item_qty_measurement}
+                <button onClick={pushToEditItem}>Edit Listing </button>
+                <button
+                  onClick={e => {
+                    e.stopPropagation();
+                    pushToDeleteItem(item);
+                  }}
+                >
+                  Delete Listing
+                </button>
+              </p>
+            ))}
+          </div>
+        </section>
         <p>{message}</p>
-      </div>
-      <button onClick={pushToMarketplace}> ⇦ Marketplace</button>
-      <button onClick={logOutButton}>Log Out</button>
-    </div>
+      </article>
+    </>
   );
 }
 
