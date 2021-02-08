@@ -4,7 +4,7 @@ For steps on how to work with this repository [please see here](https://docs.lab
 
 # buildwkone
 
-You can find the deployed project at [African Market Place](https://african-market-place.vercel.app/).
+You can find the deployed project at [African Market Place](https://front-end-one-nu.vercel.app/#menu).
 
 ## Contributors
 
