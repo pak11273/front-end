@@ -22,6 +22,8 @@ export const LoginPage = () => {
   const [loginFormValues, setLoginFormValues] = useState(initialForm);
   const [disabled, setDisabled] = useState(true);
   const [loginErrors, setLoginErrors] = useState(errors);
+  const [loading, setLoading] = useState(false);
+
   const { push } = useHistory();
 
   useEffect(() => {
@@ -40,6 +42,8 @@ export const LoginPage = () => {
   };
 
   const onSubmit = e => {
+    setLoading(true);
+    setDisabled(true);
     e.preventDefault();
     axios
       .post(
@@ -47,12 +51,15 @@ export const LoginPage = () => {
         loginFormValues
       )
       .then(response => {
+        setDisabled(false);
+        setLoading(false);
         updateLogin(response.data.token);
         push('/marketplace');
       })
       .catch(error => {
         console.log(error);
       });
+
     setLoginFormValues(initialForm);
   };
 
@@ -73,7 +80,7 @@ export const LoginPage = () => {
 
   return (
     <div id="page-wrapper">
-      <div className="landing is-preload">
+      <div className="landing is-preload" id="login">
         <section id="banner">
           <form onSubmit={onSubmit}>
             <div className="inner">
@@ -112,6 +119,12 @@ export const LoginPage = () => {
                 <li>
                   <button className="button primary" disabled={disabled}>
                     Login
+                    <span className={loading ? 'lds-ring' : ''}>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </span>
                   </button>
                 </li>
               </ul>
