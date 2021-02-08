@@ -1,27 +1,21 @@
-# Basic SPAS
+# Basic SPA
 
 For steps on how to work with this repository [please see here](https://docs.labs.lambdaschool.com/labs-spa-starter/)
 
-🚫 Note: All lines that start with 🚫 are instructions and should be deleted before this is posted to your first Pull-Request is merged. This is intended to be a guideline. Feel free to add your own flare to it.
-
 # buildwkone
 
-You can find the deployed project at [🚫URL NAME GOES HERE](🚫copy and paste URL here).
+You can find the deployed project at [African Market Place](https://african-market-place.vercel.app/).
 
 ## Contributors
 
-🚫Add contributor info below, make sure add images and edit the social links for each member. Add to or delete these place-holders as needed
-
-|                                                 [Rob Houck](https://www.linkedin.com/in/robbhouck/)                                                  |                                                       [Student 2](https://github.com/)                                                        |                                                      [Student 3](https://github.com/)                                                       |                                                       [Student 4](https://github.com/)                                                        |                                                      [Student 5](https://github.com/)                                                       |
-| :--------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: |
-| [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/rbhouck32) | [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/) | [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/) | [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/) | [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/) |
-|                                    [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                                     |                            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/honda0306)                             |                          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn)                           |                          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)                           |                           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah)                            |
-|                    [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                     |                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                 |                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                |                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                 |                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                |
+|                                                        [Rob Houck](https://www.linkedin.com/in/robbhouck/)                                                        |                                                                                  [Stephanie Enciso](https://www.linkedin.com/in/stephanieenciso/)                                                                                   |                                                                                  [Devon Brady](https://www.linkedin.com/in/devon-brady-26bbaa148/)                                                                                  |                                                       [Student 4](https://github.com/)                                                        |                                                      [Student 5](https://github.com/)                                                       |
+| :---------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: |
+| [<img src="https://avatars.githubusercontent.com/u/57123769?s=400&u=0f465071104a36d41a96fcf7149c98f1219b4847&v=4" width = "200" />](https://github.com/rbhouck32) | [<img src="https://media-exp1.licdn.com/dms/image/C4E03AQHDayFlZOzjqg/profile-displayphoto-shrink_400_400/0/1605632211774?e=1618444800&v=beta&t=uStT0oGhfj3D9hqzaDbwLT2FOvgSbWO_bPlsl80pRpU" width = "200" />](https://github.com/) | [<img src="https://media-exp1.licdn.com/dms/image/C4E03AQGLgE1cBGcvtg/profile-displayphoto-shrink_400_400/0/1603214548419?e=1618444800&v=beta&t=N6Vp03a1dKeeDGYAqXpTUy1PTWV5zzsRFievaRIysF4" width = "200" />](https://github.com/) | [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/) | [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/) |
+|                                           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                                           |                                                                       [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/honda0306)                                                                        |                                                                      [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn)                                                                       |                          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)                           |                           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah)                            |
+|                           [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                           |                                                            [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                                                            |                                                            [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                                                            |                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                 |                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                |
 
 <br>
 <br>
-
-🚫 Optional examples of using images with links for your tech stack, make sure to change these to fit your project
 
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
 ![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
@@ -38,27 +32,17 @@ You can find the deployed project at [🚫URL NAME GOES HERE](🚫copy and paste
 
 ### Key Features
 
-- feature one
-- feature two
-- feature three
-- feature four
-- feature five
+- Local African small businesses can register/login to site
+- African businesses and visitors can see what products are being sold in their area.
+- Local African small businesses can list their products
 
-#### Front end deployed to `🚫insert hosting service here`
+#### Front end deployed to `vercel`
 
-vercel
+#### [Back end](https://github.com/AfricanMarketPlace-TeamSimba/backend) built using: `heroku`
 
-#### [Back end](🚫link to back end repo here) built using:
+#### NodeJS
 
-heroku
-
-#### 🚫 back end framework goes here
-
-- Node
-- ExpressJS
-
-🚫 List the rest of the back end end features and libraries in the same format as the framework above
-
+- ExpressJS framework
 - SQL database
 - Knex ORM
 
