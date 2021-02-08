@@ -8,11 +8,11 @@ You can find the deployed project at [African Market Place](https://african-mark
 
 ## Contributors
 
-|                                                        [Rob Houck](https://www.linkedin.com/in/robbhouck/)                                                        |                                                                                  [Stephanie Enciso](https://www.linkedin.com/in/stephanieenciso/)                                                                                   |                                                                                  [Devon Brady](https://www.linkedin.com/in/devon-brady-26bbaa148/)                                                                                  |                                                       [Student 4](https://github.com/)                                                        |                                                      [Student 5](https://github.com/)                                                       |
-| :---------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: |
-| [<img src="https://avatars.githubusercontent.com/u/57123769?s=400&u=0f465071104a36d41a96fcf7149c98f1219b4847&v=4" width = "200" />](https://github.com/rbhouck32) | [<img src="https://media-exp1.licdn.com/dms/image/C4E03AQHDayFlZOzjqg/profile-displayphoto-shrink_400_400/0/1605632211774?e=1618444800&v=beta&t=uStT0oGhfj3D9hqzaDbwLT2FOvgSbWO_bPlsl80pRpU" width = "200" />](https://github.com/) | [<img src="https://media-exp1.licdn.com/dms/image/C4E03AQGLgE1cBGcvtg/profile-displayphoto-shrink_400_400/0/1603214548419?e=1618444800&v=beta&t=N6Vp03a1dKeeDGYAqXpTUy1PTWV5zzsRFievaRIysF4" width = "200" />](https://github.com/) | [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/) | [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/) |
-|                                           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                                           |                                                                       [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/honda0306)                                                                        |                                                                      [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn)                                                                       |                          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)                           |                           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah)                            |
-|                           [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                           |                                                            [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                                                            |                                                            [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                                                            |                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                 |                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                |
+|                                                        [Rob Houck](https://www.linkedin.com/in/robbhouck/)                                                        |                                                                                  [Stephanie Enciso](https://www.linkedin.com/in/stephanieenciso/)                                                                                   |                                                                                  [Devon Brady](https://www.linkedin.com/in/devon-brady-26bbaa148/)                                                                                  |                                                          [Mona](https://github.com/)                                                          |                                                                                    [Isaac Pak](https://www.linkedin.com/in/isaac-pak-78b72687/)                                                                                     |
+| :---------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| [<img src="https://avatars.githubusercontent.com/u/57123769?s=400&u=0f465071104a36d41a96fcf7149c98f1219b4847&v=4" width = "200" />](https://github.com/rbhouck32) | [<img src="https://media-exp1.licdn.com/dms/image/C4E03AQHDayFlZOzjqg/profile-displayphoto-shrink_400_400/0/1605632211774?e=1618444800&v=beta&t=uStT0oGhfj3D9hqzaDbwLT2FOvgSbWO_bPlsl80pRpU" width = "200" />](https://github.com/) | [<img src="https://media-exp1.licdn.com/dms/image/C4E03AQGLgE1cBGcvtg/profile-displayphoto-shrink_400_400/0/1603214548419?e=1618444800&v=beta&t=N6Vp03a1dKeeDGYAqXpTUy1PTWV5zzsRFievaRIysF4" width = "200" />](https://github.com/) | [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/) | [<img src="https://media-exp1.licdn.com/dms/image/C4D03AQHEMEd21bW1CQ/profile-displayphoto-shrink_400_400/0/1606151035662?e=1618444800&v=beta&t=xcZdZpmXL-3QFjC_CkRDCjPSN5oSDNwxlM-Vz_0OY6w" width = "200" />](https://github.com/) |
+|                                           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                                           |                                                                       [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/honda0306)                                                                        |                                                                      [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn)                                                                       |                          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)                           |                                                                       [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah)                                                                        |
+|                           [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                           |                                                            [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                                                            |                                                            [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                                                            |                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                 |                                                            [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                                                            |
 
 <br>
 <br>
@@ -48,36 +48,50 @@ You can find the deployed project at [African Market Place](https://african-mark
 
 #### Documentation
 
-See [Backend Documentation](🚫*link to your backend API SWAGGER DOCS here*) for details on the backend of our project.
-https://app.swaggerhub.com/apis-docs/rbhouck32/African-MarketPlace/1.0.0#/
+See [Backend Documentation](https://app.swaggerhub.com/apis-docs/rbhouck32/African-MarketPlace/1.0.0#/) for details on the backend of our project.
 
 # APIs
 
+user:
+
+- /users
+- /users/:id
+
+countries:
+
+- /countries
+- /countries/:id
+
+categories:
+
+- /categories
+- /categories/:id
+
+items:
+
+- /items
+- /items/:id
+
+userItems:
+
+- /userItems/addItems
+- /userItems/:id/list
+- /userItems/:id/list/:id
+
 ## Authentication API here
 
-🚫Replace text below with a description of the API
+auth:
 
-Water's like me. It's laaazy ... Boy, it always looks for the easiest way to do things A little happy sunlight shining through there. Let all these little things happen. Don't fight them. Learn to use them. Even the worst thing we can do here is good.
-
-## Payment API here
-
-🚫Replace text below with a description of the API
-
-This is the way you take out your flustrations. Get away from those little Christmas tree things we used to make in school. Isn't it fantastic that you can change your mind and create all these happy things? Everything's not great in life, but we can still find beauty in it.
-
-## Misc API here
-
-🚫Replace text below with a description of the API
-
-You can do anything your heart can imagine. In life you need colors. This is where you take out all your hostilities and frustrations. It's better than kicking the puppy dog around and all that so. I'm sort of a softy, I couldn't shoot Bambi except with a camera. Trees get lonely too, so we'll give him a little friend. We'll lay all these little funky little things in there.
+- /auth/register
+- /auth/login
 
 # Installation Instructions
 
-🚫explain how to install the required dependencies to get this project up and running with yarn and NPM
+- git clone this repo onto your local machine
+- cd into the `african-market-place` folder
+- then run `npm install`
 
 ## Other Scripts
-
-🚫replace these examples with your own
 
     * build - creates a build of the application
     * start - starts the production server after a build is created
