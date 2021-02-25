@@ -47,7 +47,9 @@ export const LoginPage = () => {
     e.preventDefault();
     axios
       .post(
-        'https://african-marketplace-tt14.herokuapp.com/api/auth/login',
+        process.env.NODE_ENV === 'production'
+          ? 'https://african-marketplace-tt14.herokuapp.com/api/auth/login'
+          : 'http://localhost:5000/api/auth/login',
         loginFormValues
       )
       .then(response => {
@@ -57,7 +59,8 @@ export const LoginPage = () => {
         push('/marketplace');
       })
       .catch(error => {
-        console.log(error);
+        setLoginErrors({ message: error.response.data.message });
+        setLoading(false);
       });
 
     setLoginFormValues(initialForm);
@@ -117,15 +120,22 @@ export const LoginPage = () => {
               <div style={{ color: 'red' }}>{loginErrors.password}</div>
               <ul className="actions special">
                 <li>
-                  <button className="button primary" disabled={disabled}>
-                    Login
-                    <span className={loading ? 'lds-ring' : ''}>
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                    </span>
-                  </button>
+                  <div>
+                    <div style={{ color: 'red' }}>{loginErrors.message}</div>
+                    <button
+                      className="button primary"
+                      style={{ margin: '0 auto' }}
+                      disabled={disabled}
+                    >
+                      Login
+                      <span className={loading ? 'lds-ring' : ''}>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                      </span>
+                    </button>
+                  </div>
                 </li>
               </ul>
             </div>
