@@ -30,7 +30,7 @@ export const handlers = [
         })
       );
     } else {
-      return res(ctx.status(403), ctx.json({ error: 'Invalid credentials' }));
+      return res(ctx.status(403), ctx.json({ message: 'Invalid credentials' }));
     }
   }),
 

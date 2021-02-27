@@ -61,6 +61,7 @@ export const LoginPage = () => {
         push('/marketplace');
       })
       .catch(error => {
+        console.log('error: ', error.response.data.message);
         setLoginErrors({ message: error.response.data.message });
         setLoading(false);
       });
