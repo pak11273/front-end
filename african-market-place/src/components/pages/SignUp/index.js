@@ -51,7 +51,9 @@ export const SignUpPage = () => {
     e.preventDefault();
     axios
       .post(
-        'https://african-marketplace-tt14.herokuapp.com/api/auth/register',
+        process.env.NODE_ENV === 'production'
+          ? 'https://african-marketplace-tt14.herokuapp.com/api/auth/register'
+          : 'http://localhost:5000/api/auth/register',
         signUpFormValues
       )
       .then(response => {

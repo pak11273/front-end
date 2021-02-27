@@ -11,12 +11,14 @@ import { PrivateRoute } from './utils/PrivateRout';
 import React from 'react';
 import SignUpCompleted from './components/pages/SignUpCompleted';
 import { SignUpPage } from './components/pages/SignUp';
+import { Test } from './components/pages/Test';
 import UserDashboard from './components/pages/Dashboard';
 
 export default function mainApp() {
   return (
     <Switch>
       <Route path="/" exact component={() => <LandingPage />} />
+      <Route path="/test" exact component={Test} />
       <Route exact path="/signup" component={SignUpPage} />
       <Route exact path="/success" component={SignUpCompleted} />
       <Route exact path="/login" component={LoginPage} />

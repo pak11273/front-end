@@ -11,7 +11,8 @@ function Marketplace() {
 
   useEffect(() => {
     axiosWithAuth()
-      .get('https://african-marketplace-tt14.herokuapp.com/api/items')
+      // .get('https://african-marketplace-tt14.herokuapp.com/api/items')
+      .get('https://localhost:5000/api/items')
       .then(res => {
         setList(res.data);
       })
