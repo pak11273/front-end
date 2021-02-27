@@ -13,15 +13,9 @@ export const Test = () => {
     'get'
   );
 
-  // useEffect(() => {
-  //   axios
-  //     .get('https://github.com/octocat')
-  //     .then(res => console.log(res))
-  //     .catch(err => console.log(err));
-  // }, []);
-
   useEffect(() => {
     console.log('loading: ', isLoading);
+    console.log('error: ', error);
   }, [isLoading]);
 
   return (
