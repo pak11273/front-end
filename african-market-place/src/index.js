@@ -12,13 +12,13 @@ import { UserProvider } from './utils/UserContext';
 import { createStore } from 'redux';
 import reducer from './utils/reducer';
 
-if (
-  process.env.NODE_ENV !== 'production' ||
-  process.env.NODE_ENV === 'development'
-) {
-  const { worker } = require('./mocks/browser');
-  worker.start();
-}
+// if (
+//   process.env.NODE_ENV !== 'production' ||
+//   process.env.NODE_ENV === 'development'
+// ) {
+const { worker } = require('./mocks/browser');
+worker.start();
+// }
 
 // import { LoadingComponent } from './components/common';
 const store = createStore(

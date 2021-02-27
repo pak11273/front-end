@@ -8,7 +8,7 @@ import { useAxiosAuth } from 'src/hooks/useAxiosAuth';
 
 export const Test = () => {
   const [res, error, isLoading] = useAxiosAuth(
-    'http://localhost:5000',
+    'http://localhost:5000/api',
     'test',
     'get'
   );

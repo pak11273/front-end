@@ -53,6 +53,7 @@ export const LoginPage = () => {
         loginFormValues
       )
       .then(response => {
+        console.log(response);
         setDisabled(false);
         setLoading(false);
         updateLogin(response.data.token);
