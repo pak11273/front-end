@@ -12,12 +12,13 @@ function Marketplace() {
   useEffect(() => {
     axiosWithAuth()
       // .get('https://african-marketplace-tt14.herokuapp.com/api/items')
-      .get('https://localhost:5000/api/items')
+      .get('http://localhost:5000/api/items')
       .then(res => {
+        console.log('res: ', res);
         setList(res.data);
       })
       .catch(error => {
-        console.log(error);
+        console.log('msg: ', error.response.data.message);
       });
   }, []);
 
@@ -58,7 +59,8 @@ function Marketplace() {
           return (
             <Card
               key={item.id}
-              item_picUrl={(url[0] && url[0].src) || emptyImg}
+              // item_picUrl={(url[0] && url[0].src) || emptyImg}
+              item_picUrl={item.item_picUrl || emptyImg}
               item_name={item.item_name}
               item_price={item.item_price}
               item_qty={item.item_qty}

@@ -1,5 +1,6 @@
 // src/mocks/handlers.js
 
+import { products } from 'src/assets/data/products.js';
 import { rest } from 'msw';
 
 const baseURL = 'http://localhost:5000/api';
@@ -34,26 +35,21 @@ export const handlers = [
     }
   }),
 
-  rest.get('/user', (req, res, ctx) => {
+  rest.get(`${baseURL}/items`, (req, res, ctx) => {
     // Check if the user is authenticated in this session
-    const isAuthenticated = sessionStorage.getItem('is-authenticated');
+    // const isAuthenticated = sessionStorage.getItem('is-authenticated');
 
-    if (!isAuthenticated) {
-      // If not authenticated, respond with a 403 error
-      return res(
-        ctx.status(403),
-        ctx.json({
-          errorMessage: 'Not authorized',
-        })
-      );
-    }
+    // if (!isAuthenticated) {
+    //   // If not authenticated, respond with a 403 error
+    //   return res(
+    //     ctx.status(403),
+    //     ctx.json({
+    //       message: 'Not authorized',
+    //     })
+    //   );
+    // }
 
     // If authenticated, return a mocked user details
-    return res(
-      ctx.status(200),
-      ctx.json({
-        username: 'admin',
-      })
-    );
+    return res(ctx.status(200), ctx.json(products));
   }),
 ];

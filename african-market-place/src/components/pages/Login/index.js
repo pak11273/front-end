@@ -124,7 +124,9 @@ export const LoginPage = () => {
               <ul className="actions special">
                 <li>
                   <div>
-                    <div style={{ color: 'red' }}>{loginErrors.message}</div>
+                    <div style={{ color: 'red', marginBottom: '40px' }}>
+                      {loginErrors.message}
+                    </div>
                     <button
                       className="button primary"
                       style={{ margin: '0 auto' }}
