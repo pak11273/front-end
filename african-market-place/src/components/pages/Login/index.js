@@ -48,7 +48,8 @@ export const LoginPage = () => {
     axios
       .post(
         process.env.NODE_ENV === 'production'
-          ? 'https://african-marketplace-tt14.herokuapp.com/api/auth/login'
+          ? // ? 'https://african-marketplace-tt14.herokuapp.com/api/auth/login'
+            'http://localhost:5000/api/auth/login'
           : 'http://localhost:5000/api/auth/login',
         loginFormValues
       )
