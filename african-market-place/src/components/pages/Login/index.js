@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useReducer, useState } from 'react';
 
 import axios from 'axios';
 import { loginSchema } from '../../../schema';
@@ -19,8 +19,31 @@ export const LoginPage = () => {
     password: '',
   };
 
+  const UNSET_DISABLE = 'UNSET_DISABLE';
+  const SET_DISABLE = 'SET_DISABLE';
+
+  const reducer = (state, action) => {
+    switch (action.type) {
+      case UNSET_DISABLE:
+        return {
+          disabled: false,
+        };
+      case SET_DISABLE:
+        return {
+          disabled: true,
+        };
+      default:
+        return state;
+    }
+  };
+
+  const initialState = {
+    disabled: true,
+  };
+
+  const [state, dispatch] = useReducer(reducer, initialState);
+
   const [loginFormValues, setLoginFormValues] = useState(initialForm);
-  const [disabled, setDisabled] = useState(true);
   const [loginErrors, setLoginErrors] = useState(errors);
   const [loading, setLoading] = useState(false);
 
@@ -28,7 +51,9 @@ export const LoginPage = () => {
 
   useEffect(() => {
     loginSchema.isValid(loginFormValues).then(valid => {
-      setDisabled(!valid);
+      if (valid) {
+        dispatch({ type: 'UNSET_DISABLE' });
+      }
     });
   }, [loginFormValues]);
 
@@ -43,7 +68,7 @@ export const LoginPage = () => {
 
   const onSubmit = e => {
     setLoading(true);
-    setDisabled(true);
+    dispatch({ type: 'SET_DISABLED' });
     e.preventDefault();
     axios
       .post(
@@ -55,7 +80,7 @@ export const LoginPage = () => {
       )
       .then(response => {
         console.log(response);
-        setDisabled(false);
+        dispatch({ type: 'SET_DISABLED' });
         setLoading(false);
         updateLogin(response.data.token);
         push('/marketplace');
@@ -75,7 +100,7 @@ export const LoginPage = () => {
       .validate(value)
       .then(() => {
         setLoginErrors({ ...loginErrors, [name]: '' });
-        setDisabled(false);
+        dispatch({ type: 'SET_DISABLED' });
       })
       .catch(error => {
         setLoginErrors({ ...loginErrors, [name]: error.errors[0] });
@@ -130,7 +155,7 @@ export const LoginPage = () => {
                     <button
                       className="button primary"
                       style={{ margin: '0 auto' }}
-                      disabled={disabled}
+                      disabled={state.disabled}
                     >
                       Login
                       <span className={loading ? 'lds-ring' : ''}>

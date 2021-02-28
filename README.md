@@ -41,6 +41,14 @@ You can find the deployed project at [African Market Place](https://front-end-on
 
 #### Front end deployed to `vercel`
 
+<br />
+<hr />
+<h2>To demo the features use</h2>
+<p>username: demo
+<p>password: password
+<hr />
+<br />
+
 #### [Back end](https://github.com/AfricanMarketPlace-TeamSimba/backend) built using: `heroku`
 
 #### NodeJS
