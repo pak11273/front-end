@@ -1,6 +1,13 @@
 import * as yup from 'yup';
 
+import {
+  CLEAR_FORM,
+  SET_DISABLED,
+  SET_VALUES,
+  UNSET_DISABLED,
+} from 'src/useReducer';
 import React, { useEffect, useReducer, useState } from 'react';
+import reducer, { initialState } from 'src/useReducer';
 
 import axios from 'axios';
 import { loginSchema } from '../../../schema';
@@ -9,42 +16,11 @@ import { useUpdateLogin } from 'src/utils/UserContext';
 
 export const LoginPage = () => {
   const updateLogin = useUpdateLogin();
-  const initialForm = {
-    username: '',
-    password: '',
-  };
-
-  const errors = {
-    username: '',
-    password: '',
-  };
-
-  const UNSET_DISABLE = 'UNSET_DISABLE';
-  const SET_DISABLE = 'SET_DISABLE';
-
-  const reducer = (state, action) => {
-    switch (action.type) {
-      case UNSET_DISABLE:
-        return {
-          disabled: false,
-        };
-      case SET_DISABLE:
-        return {
-          disabled: true,
-        };
-      default:
-        return state;
-    }
-  };
-
-  const initialState = {
-    disabled: true,
-  };
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const [loginFormValues, setLoginFormValues] = useState(initialForm);
-  const [loginErrors, setLoginErrors] = useState(errors);
+  const [loginFormValues, setLoginFormValues] = useState(state.initialForm);
+  const [loginErrors, setLoginErrors] = useState(state.errors);
   const [loading, setLoading] = useState(false);
 
   const { push } = useHistory();
@@ -52,7 +28,7 @@ export const LoginPage = () => {
   useEffect(() => {
     loginSchema.isValid(loginFormValues).then(valid => {
       if (valid) {
-        dispatch({ type: 'UNSET_DISABLE' });
+        dispatch({ type: UNSET_DISABLED });
       }
     });
   }, [loginFormValues]);
@@ -68,7 +44,7 @@ export const LoginPage = () => {
 
   const onSubmit = e => {
     setLoading(true);
-    dispatch({ type: 'SET_DISABLED' });
+    dispatch({ type: SET_DISABLED });
     e.preventDefault();
     axios
       .post(
@@ -79,19 +55,17 @@ export const LoginPage = () => {
         loginFormValues
       )
       .then(response => {
-        console.log(response);
-        dispatch({ type: 'SET_DISABLED' });
+        dispatch({ type: SET_DISABLED });
         setLoading(false);
         updateLogin(response.data.token);
         push('/marketplace');
       })
       .catch(error => {
-        console.log('error: ', error.response.data.message);
         setLoginErrors({ message: error.response.data.message });
         setLoading(false);
       });
 
-    setLoginFormValues(initialForm);
+    dispatch({ type: CLEAR_FORM });
   };
 
   const upDateLoginForm = (name, value) => {
@@ -100,13 +74,14 @@ export const LoginPage = () => {
       .validate(value)
       .then(() => {
         setLoginErrors({ ...loginErrors, [name]: '' });
-        dispatch({ type: 'SET_DISABLED' });
+        dispatch({ type: SET_DISABLED });
       })
       .catch(error => {
         setLoginErrors({ ...loginErrors, [name]: error.errors[0] });
       });
 
     setLoginFormValues({ ...loginFormValues, [name]: value });
+    dispatch({ type: SET_VALUES, name, value });
   };
 
   return (

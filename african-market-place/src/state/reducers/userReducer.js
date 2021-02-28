@@ -1,18 +1,19 @@
-// import React from "react";
+// Note:  this file is just for example using redux.  The actual userReducer being used is in src/userReducer.js
 
 import {
-  SAVE_USER,
-  EDIT_ITEM,
-  DELETE_ITEM,
   ADD_ITEM,
+  DELETE_ITEM,
+  EDIT_ITEM,
   ITEM_ID,
-} from './actions';
+  SAVE_USER,
+} from 'src/state/types/userTypes';
+
 const initialUserState = {
   item_id: [],
   user_id: '',
   items: [],
 };
-const reducer = (state = initialUserState, action) => {
+export const userReducer = (state = initialUserState, action) => {
   switch (action.type) {
     case SAVE_USER:
       return { ...state, user_id: action.payload };
@@ -44,4 +45,3 @@ const reducer = (state = initialUserState, action) => {
       return state;
   }
 };
-export default reducer;

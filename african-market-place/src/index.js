@@ -1,4 +1,3 @@
-// import './assets/css/main.css';
 import './assets/sass/main.scss';
 
 import App from './App';
@@ -9,8 +8,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { UserProvider } from './utils/UserContext';
-import { createStore } from 'redux';
-import reducer from './utils/reducer';
+import { store } from 'src/state/store';
 
 // if (
 //   process.env.NODE_ENV !== 'production' ||
@@ -21,11 +19,6 @@ worker.start();
 // }
 
 // import { LoadingComponent } from './components/common';
-const store = createStore(
-  reducer /* preloadedState, */,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
-
 ReactDOM.render(
   <Router>
     <React.StrictMode>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import { Card } from 'src/components/common/Card';
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
-import { pics } from 'src/assets/files/card_pics.js';
+// prod: import { pics } from 'src/assets/files/card_pics.js';
 import { useHistory } from 'react-router-dom';
 
 function Marketplace() {
@@ -11,10 +11,9 @@ function Marketplace() {
 
   useEffect(() => {
     axiosWithAuth()
-      // .get('https://african-marketplace-tt14.herokuapp.com/api/items')
+      // prod: .get('https://african-marketplace-tt14.herokuapp.com/api/items')
       .get('http://localhost:5000/api/items')
       .then(res => {
-        console.log('res: ', res);
         setList(res.data);
       })
       .catch(error => {
@@ -49,9 +48,9 @@ function Marketplace() {
         style={{ display: 'flex', flexFlow: 'row wrap', margin: '3rem' }}
       >
         {list.map(item => {
-          let url = pics.filter(pic => {
-            return pic.name === item.item_name;
-          });
+          // prod: let url = pics.filter(pic => {
+          //   return pic.name === item.item_name;
+          // });
 
           let emptyImg =
             'https://thumbs.dreamstime.com/b/no-image-available-icon-photo-camera-flat-vector-illustration-132483141.jpg';
@@ -59,7 +58,7 @@ function Marketplace() {
           return (
             <Card
               key={item.id}
-              // item_picUrl={(url[0] && url[0].src) || emptyImg}
+              // prod: item_picUrl={(url[0] && url[0].src) || emptyImg}
               item_picUrl={item.item_picUrl || emptyImg}
               item_name={item.item_name}
               item_price={item.item_price}
