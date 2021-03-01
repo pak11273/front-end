@@ -1,29 +1,30 @@
 import React from 'react';
-// import { useHistory } from 'react-router-dom';
+import { axiosWithAuth } from 'src/utils/axiosWithAuth';
+import { useHistory } from 'react-router-dom';
 
 export const Card = props => {
-  // const { push } = useHistory();
+  const { push } = useHistory();
 
-  // const pushToEditItem = (e, props) => {
-  //   push(`/edititem/${props.id}`, props);
-  // };
+  const pushToEditItem = id => {
+    push(`/edititem/${id}`);
+  };
 
-  // const pushToDeleteItem = (e, props) => {
-  //   push(`/deleteitem/${props.id}`, props);
-  //   //add axios call
-  //   // axiosWithAuth()
-  //   //   .delete(`https://african-marketplace-tt14.herokuapp.com/${id}`)
-  //   //   .then(res => {
-  //   //     console.log(res);
-  //   //     dispatch(deleteItem(id));
-  //   //   })
-  //   //   .catch(err => {
-  //   //     console.log(err);
-  //   //   });
-  // };
+  const pushToDeleteItem = () => {
+    push(`/deleteitem/${props.id}`, props);
+    // add axios call
+    axiosWithAuth()
+      .delete(`https://african-marketplace-tt14.herokuapp.com/${id}`)
+      .then(res => {
+        console.log(res);
+        // dispatch(deleteItem(id));
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
 
   const {
-    // id,
+    id,
     item_name,
     item_picUrl,
     item_category,
@@ -42,7 +43,7 @@ export const Card = props => {
       <h6>measurement: {item_qty_measurement}</h6>
       <h6>Category: {item_category}</h6>
       {/* if owner then show these buttons */}
-      {/* 
+
       <input
         type="button"
         value="edit"
@@ -53,16 +54,15 @@ export const Card = props => {
           padding: '0 1em',
           marginRight: '1em',
         }}
-        onClick={e => pushToEditItem(e, props)}
+        onClick={() => pushToEditItem(id)}
       />
       <input
         className="delete-item button"
         type="button"
         value="delete"
         style={{ height: '2em', lineHeight: '2em', padding: '0 1em' }}
-        onClick={e => pushToDeleteItem(e, props)}
+        onClick={pushToDeleteItem}
       />
-      */}
     </div>
   );
 };

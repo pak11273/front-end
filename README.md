@@ -28,8 +28,8 @@ You can find the deployed project at [African Market Place](https://front-end-on
 
 - Fork and clone the repo to install it as your own remote.
   - **note** please [be sure to set your remote](https://help.github.jp/enterprise/2.11/user/articles/changing-a-remote-s-url/) for this repo to point to your Labs Team Front End Repository.
-- run: `npm install` to download all dependencies.
-- run: `npm start` to start your local development server.
+- run: `yarn install` to download all dependencies.
+- run: `yarn start` to start your local development server.
 
 > When using Okta for authentication, the app will need to run locally on port 3000.
 
@@ -100,7 +100,7 @@ auth:
 
 - git clone this repo onto your local machine
 - cd into the `african-market-place` folder
-- then run `npm install`
+- then run `yarn install`
 
 ## Other Scripts
 

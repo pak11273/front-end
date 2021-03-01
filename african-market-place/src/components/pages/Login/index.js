@@ -10,11 +10,13 @@ import React, { useEffect, useReducer, useState } from 'react';
 import reducer, { initialState } from 'src/useReducer';
 
 import axios from 'axios';
+import { connect } from 'react-redux';
 import { loginSchema } from '../../../schema';
+import { setUser } from 'src/state/actions/userActions';
 import { useHistory } from 'react-router-dom';
 import { useUpdateLogin } from 'src/utils/UserContext';
 
-export const LoginPage = () => {
+const Login = props => {
   const updateLogin = useUpdateLogin();
 
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -58,6 +60,10 @@ export const LoginPage = () => {
         dispatch({ type: SET_DISABLED });
         setLoading(false);
         updateLogin(response.data.token);
+        props.setUser({
+          userId: response.data.userId,
+          username: response.data.username,
+        });
         push('/marketplace');
       })
       .catch(error => {
@@ -150,3 +156,9 @@ export const LoginPage = () => {
     </div>
   );
 };
+
+const mapStateToProps = ({ userReducer }) => {
+  return { username: userReducer.username, userId: userReducer.userId };
+};
+
+export const LoginPage = connect(mapStateToProps, { setUser })(Login);

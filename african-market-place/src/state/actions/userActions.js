@@ -1,31 +1,15 @@
-import {
-  ADD_ITEM,
-  DELETE_ITEM,
-  EDIT_ITEM,
-  ITEM_ID,
-} from 'src/state/types/userTypes';
+import { SAVE_USER, SET_USER } from 'src/state/types/userTypes';
 
-export const editItem = item => {
+export const saveUser = user => {
   return {
-    type: EDIT_ITEM,
-    payload: item,
+    type: SAVE_USER,
+    payload: user,
   };
 };
-export const deleteItem = itemId => {
+
+export const setUser = ({ userId, username }) => {
   return {
-    type: DELETE_ITEM,
-    payload: itemId,
-  };
-};
-export const addItem = itemWithUserId => {
-  return {
-    type: ADD_ITEM,
-    payload: itemWithUserId,
-  };
-};
-export const itemId = itemID => {
-  return {
-    type: ITEM_ID,
-    payload: itemID,
+    type: SET_USER,
+    payload: { userId, username },
   };
 };

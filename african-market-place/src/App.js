@@ -25,7 +25,7 @@ export default function mainApp() {
       <Route exact path="/logout" component={LogoutPage} />
       <PrivateRoute exact path="/dashboard" component={UserDashboard} />
       <PrivateRoute exact path="/marketplace" component={Marketplace} />
-      <PrivateRoute exact path="/edititem" component={CardEdit} />
+      <PrivateRoute exact path="/edititem/:id" component={CardEdit} />
       <PrivateRoute exact path="/additem" component={CardAdd} />
       <Route component={NotFoundPage} />
     </Switch>

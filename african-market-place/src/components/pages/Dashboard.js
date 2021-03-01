@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 
+import { Card } from '../common/Card';
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
+import { connect } from 'react-redux';
+import { setItems } from 'src/state/actions/itemActions';
 import { useHistory } from 'react-router-dom';
 
 // import { deleteItem } from "../../utils/actions";
 // import { useDispatch } from 'react-redux';
 
 function UserDashboard(props) {
-  const [state, setState] = useState([]);
   const [message, setMessage] = useState('');
   const { push } = useHistory();
   // const { dispatch } = useDispatch();
@@ -19,22 +21,19 @@ function UserDashboard(props) {
 
   useEffect(() => {
     axiosWithAuth()
-      .post(
-        'https://african-marketplace-tt14.herokuapp.com/api/userItems/addItems',
-        values
-      )
+      // prod: .get('https://african-marketplace-tt14.herokuapp.com/api/items')
+      .get('http://localhost:5000/api/items')
       .then(res => {
-        //dispatch(addItem(res.data))
-        // keeping state so code wont break
-        //post would not work because a different endpoint is giving a 500 error so const values is undefined
-        setState(res.data);
-        console.log(state);
+        props.setItems(res.data);
       })
-      .catch(err => {
-        console.log(err);
+      .catch(error => {
+        console.log('msg: ', error.response.data.message);
       });
-    // eslint-disable-next-line
   }, []);
+
+  const pushToDash = () => {
+    push('/dashboard');
+  };
 
   const pushToAddItem = () => {
     push('/additem');
@@ -44,25 +43,18 @@ function UserDashboard(props) {
     push('/edititem');
   };
 
-  // const pushToDash = () => {
-  //   push('/dashboard');
-  // };
-
   const pushToMarketplace = () => {
     push('/marketplace');
   };
 
   const pushToDeleteItem = item => {
     //add axios call
-    // console.log(state);
     // console.log(item);
     axiosWithAuth()
       .delete(
         `https://african-marketplace-tt14.herokuapp.com/api/userItems/${item.user_id}/list/${item.item_id}`
       )
       .then(res => {
-        console.log(res);
-        console.log(state);
         setMessage(res.data.message);
         //dispatch(deleteItem(res.data));
         //doesn't work because the only response recieved is a success message is recieved
@@ -97,26 +89,17 @@ function UserDashboard(props) {
         <section
           style={{ display: 'flex', flexFlow: 'row wrap', margin: '3rem' }}
         >
-          <br />
-          <div>
-            {state.map(item => (
-              <p key={item.item_id}>
-                {' '}
-                Name: {item.item_name}| Price: {item.item_price}| Qty:{' '}
-                {item.item_qty}
-                {item.item_qty_measurement}
-                <button onClick={pushToEditItem}>Edit Listing </button>
-                <button
-                  onClick={e => {
-                    e.stopPropagation();
-                    pushToDeleteItem(item);
-                  }}
-                >
-                  Delete Listing
-                </button>
-              </p>
-            ))}
-          </div>
+          {props.ownerItems.map(item => (
+            <Card
+              key={item.item_id}
+              item_name={item.item_name}
+              item_picUrl={item.item_picUrl}
+              item_category={item.item_category}
+              item_price={item.item_price}
+              item_qty={item.item_qty}
+              item_qty_measurement={item.item_qty_measurement}
+            />
+          ))}
         </section>
         <p>{message}</p>
       </article>
@@ -124,14 +107,12 @@ function UserDashboard(props) {
   );
 }
 
-// const mapStateToProps = (state) => {
-//   return {
-//   user_id: state.user_id,
-//   items: state.items,
-//   item_id: state.item_id,
-//}
-//};
+const mapStateToProps = ({ itemsReducer, userReducer }) => {
+  return {
+    ownerItems: itemsReducer.items.filter(
+      item => item.owner_id === userReducer.userId
+    ),
+  };
+};
 
-// export default connect(mapStateToProps,{addItem,deleteItem})(UserDashboard)
-
-export default UserDashboard;
+export default connect(mapStateToProps, { setItems })(UserDashboard);

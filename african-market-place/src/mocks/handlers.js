@@ -28,6 +28,8 @@ export const handlers = [
         ctx.status(200),
         ctx.json({
           token,
+          userId: 'xyz',
+          username: 'demoUser',
         })
       );
     } else {

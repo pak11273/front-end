@@ -1,6 +1,8 @@
 import * as yup from 'yup';
+
 import React, { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
+
 import Button from './Button';
 import { CardDropdown } from './CardDropdown';
 import { CardInput } from './CardInput';
@@ -81,45 +83,51 @@ export const CardEdit = props => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <div
-        style={{
-          margin: '100px auto 0',
-          width: '100%',
-          maxWidth: '300px',
-        }}
-      >
-        <h2>id: {id} </h2>
-        <CardInput label="name" product={ProductValues} onChange={onChange} />
-        <div style={{ color: 'red' }}>{errors.item_name}</div>
-        <CardInput label="price" product={ProductValues} onChange={onChange} />
-        <div style={{ color: 'red' }}>{errors.item_price}</div>
-        <CardInput
-          label="quantity"
-          product={ProductValues}
-          onChange={onChange}
+    <div style={{ paddingTop: '100px' }}>
+      <form onSubmit={onSubmit}>
+        <div
+          style={{
+            margin: '0 auto',
+            width: '100%',
+            maxWidth: '300px',
+          }}
+        >
+          <h2>id: {id} </h2>
+          <CardInput label="name" product={ProductValues} onChange={onChange} />
+          <div style={{ color: 'red' }}>{errors.item_name}</div>
+          <CardInput
+            label="price"
+            product={ProductValues}
+            onChange={onChange}
+          />
+          <div style={{ color: 'red' }}>{errors.item_price}</div>
+          <CardInput
+            label="quantity"
+            product={ProductValues}
+            onChange={onChange}
+          />
+          <div style={{ color: 'red' }}>{errors.item_qty}</div>
+          <CardInput
+            label="measurement"
+            product={ProductValues}
+            onChange={onChange}
+          />
+          <div style={{ color: 'red' }}>{errors.item_qty_measurement}</div>
+          <CardDropdown
+            label="category"
+            product={ProductValues}
+            onChange={onChange}
+          />
+          <div style={{ color: 'red' }}>{errors.item_category}</div>
+        </div>
+        <Button
+          buttonText="Save Item"
+          classType="edit-item"
+          style={{ display: 'flex', margin: '40px auto' }}
+          disabled={disabled}
         />
-        <div style={{ color: 'red' }}>{errors.item_qty}</div>
-        <CardInput
-          label="measurement"
-          product={ProductValues}
-          onChange={onChange}
-        />
-        <div style={{ color: 'red' }}>{errors.item_qty_measurement}</div>
-        <CardDropdown
-          label="category"
-          product={ProductValues}
-          onChange={onChange}
-        />
-        <div style={{ color: 'red' }}>{errors.item_category}</div>
-      </div>
-      <Button
-        buttonText="Save Item"
-        classType="edit-item"
-        style={{ display: 'flex', margin: '40px auto' }}
-        disabled={disabled}
-      />
-      <button onClick={pushToDash}>Back</button>
-    </form>
+        <button onClick={pushToDash}>Back</button>
+      </form>
+    </div>
   );
 };

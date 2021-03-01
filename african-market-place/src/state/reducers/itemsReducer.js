@@ -3,6 +3,7 @@ import {
   DELETE_ITEM,
   EDIT_ITEM,
   ITEM_ID,
+  SET_ITEMS,
 } from 'src/state/types/itemsTypes';
 
 const initialUserState = {
@@ -11,6 +12,11 @@ const initialUserState = {
 };
 export const itemsReducer = (state = initialUserState, action) => {
   switch (action.type) {
+    case SET_ITEMS:
+      return {
+        ...state,
+        items: action.payload,
+      };
     case EDIT_ITEM:
       const newState = { ...state };
       newState.items.forEach(item => {
