@@ -35,16 +35,13 @@ function RenderLandingPage(props) {
         <div className="inner">
           <header className="major">
             <h2>
-              Arcu aliquet vel lobortis ata nisl
-              <br />
-              eget augue amet aliquet nisl cep donec
+              A project built with the PERN Stack
+              <br />5 dedicated software engineers
             </h2>
             <p>
-              Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet
-              eleifend
-              <br />
-              fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus
-              ullamcorper.
+              My role was to design and implement the layouts and styles for
+              this project. Upon completion I further enhanced the app and
+              improved the architecture. and
             </p>
           </header>
           <ul className="icons major">
@@ -73,14 +70,10 @@ function RenderLandingPage(props) {
             <img src={pic1} alt="" />
           </div>
           <div className="content">
-            <h2>
-              Magna primis lobortis
-              <br />
-              sed ullamcorper
-            </h2>
+            <h2>Redux state management</h2>
             <p>
-              Aliquam ut ex ut augue consectetur interdum. Donec hendrerit
-              imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.
+              We used redux to handle global state. Redux thunks was used for
+              asynchronous calls.
             </p>
           </div>
         </section>
@@ -89,14 +82,10 @@ function RenderLandingPage(props) {
             <img src={pic2} alt="" />
           </div>
           <div className="content">
-            <h2>
-              Tortor dolore feugiat
-              <br />
-              elementum magna
-            </h2>
+            <h2>SASS</h2>
             <p>
-              Aliquam ut ex ut augue consectetur interdum. Donec hendrerit
-              imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.
+              The styling was mostly SASS preprocessing and we integrated
+              several libraries to get UI parts working together.
             </p>
           </div>
         </section>
@@ -105,14 +94,9 @@ function RenderLandingPage(props) {
             <img src={pic3} alt="" />
           </div>
           <div className="content">
-            <h2>
-              Augue eleifend aliquet
-              <br />
-              sed condimentum
-            </h2>
+            <h2>Challenges</h2>
             <p>
-              Aliquam ut ex ut augue consectetur interdum. Donec hendrerit
-              imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.
+              We held daily standups and helped out where bottlenecks occurred.
             </p>
           </div>
         </section>
@@ -121,57 +105,48 @@ function RenderLandingPage(props) {
       <section id="three" className="wrapper style3 special">
         <div className="inner">
           <header className="major">
-            <h2>Accumsan mus tortor nunc aliquet</h2>
+            <h2>Our Tech Stack</h2>
             <p>
-              Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet
-              eleifend
+              This is the tech stack we used
               <br />
-              fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus
-              ullamcorper.
+              We spent several days of planning and decided to use the best
+              tools
             </p>
           </header>
           <ul className="features">
             <li className="icon fa-paper-plane">
-              <h3>Arcu accumsan</h3>
+              <h3>React</h3>
               <p>
-                Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem
-                tincidunt nullam amet leo Aenean ligula consequat consequat.
+                For our front-end we used React. It's fast and easy to prototype
+                web applications.
               </p>
             </li>
             <li className="icon solid fa-laptop">
-              <h3>Ac Augue Eget</h3>
-              <p>
-                Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem
-                tincidunt nullam amet leo Aenean ligula consequat consequat.
-              </p>
+              <h3>Redux</h3>
+              <p>We wanted a state manager that could scale out.</p>
             </li>
             <li className="icon solid fa-code">
-              <h3>Mus Scelerisque</h3>
+              <h3>Express</h3>
               <p>
-                Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem
-                tincidunt nullam amet leo Aenean ligula consequat consequat.
+                We used Node Express so that we could have the power of async
+                functions.
               </p>
             </li>
             <li className="icon solid fa-headphones-alt">
-              <h3>Mauris Imperdiet</h3>
-              <p>
-                Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem
-                tincidunt nullam amet leo Aenean ligula consequat consequat.
-              </p>
+              <h3>Postgres SQL</h3>
+              <p>Our database needed to be very performant.</p>
             </li>
             <li className="icon fa-heart">
-              <h3>Aenean Primis</h3>
+              <h3>Knex</h3>
               <p>
-                Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem
-                tincidunt nullam amet leo Aenean ligula consequat consequat.
+                We wanted a simple yet powerful ORM to handle our sql queries.
+                Knex gave us the freedom to change our schema effortlessly while
+                still giving us the option to build raw SQL queries.
               </p>
             </li>
             <li className="icon fa-flag">
-              <h3>Tortor Ut</h3>
-              <p>
-                Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem
-                tincidunt nullam amet leo Aenean ligula consequat consequat.
-              </p>
+              <h3>SASS</h3>
+              <p>For the UI we chose an old favorite.</p>
             </li>
           </ul>
         </div>

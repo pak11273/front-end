@@ -8,8 +8,8 @@ export const CLEAR_FORM = 'CLEAR_FORM';
 export const initialState = {
   disabled: true,
   initialForm: {
-    username: '',
-    password: '',
+    username: 'demoUser',
+    password: 'password',
   },
   errors: {
     username: '',
