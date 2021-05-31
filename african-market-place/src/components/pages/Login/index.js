@@ -67,7 +67,7 @@ const Login = props => {
         push('/marketplace');
       })
       .catch(error => {
-        setLoginErrors({ message: error.response.data.message });
+        setLoginErrors({ message: error && error.response.data.message });
         setLoading(false);
       });
 
