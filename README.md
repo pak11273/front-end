@@ -1,11 +1,14 @@
-# Basic SPA
+# African Marketplace MVP
 
-For steps on how to work with this repository [please see here](https://docs.labs.lambdaschool.com/labs-spa-starter/)
+## Local farmer's markets access the cloud to show off their products and increase sales
 
-# buildwkone
+You can find the deployed project at [African Market Place](https://front-end-one-nu.vercel.app/#menu).<br />
 
-You can find the deployed project at [African Market Place](https://front-end-one-nu.vercel.app/#menu).
-
+<hr />
+<h2>To demo the features use</h2>
+<p>username: demo
+<p>password: password
+<hr />
 ## Contributors
 
 <table>
@@ -13,11 +16,12 @@ You can find the deployed project at [African Market Place](https://front-end-on
     <td align="center"><a href="https://github.com/rbhouck32"><img src="https://avatars.githubusercontent.com/u/57123769?s=400&u=0f465071104a36d41a96fcf7149c98f1219b4847&v=4" width="100px;" alt=""/><br /><sub><b>Rob Houck</b></sub></a><br /><a href="https://github.com/rbhouck32"><img src="https://github.com/favicon.ico" width="15"></a>&nbsp;<a href="https://www.linkedin.com/in/robbhouck"><img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"></a></td>
 <td align="center"><a href="https://github.com/Devon-Brady"><img src="https://avatars.githubusercontent.com/u/72098634?s=460&v=4" width="100px;" alt=""/><br /><sub><b>Devon Brady</b></sub></a><br /><a href="https://github.com/Devon-Brady"><img src="https://github.com/favicon.ico" width="15"></a>&nbsp;<a href="https://www.linkedin.com/in/devon-brady-26bbaa148/"><img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"></a></td>
 <td align="center"><a href="https://github.com/xpeedy"><img src="https://avatars.githubusercontent.com/u/69333686?s=460&v=4" width="100px;" alt=""/><br /><sub><b>Hairo Garcia</b></sub></a><br /><a href="https://github.com/xpeedy"><img src="https://github.com/favicon.ico" width="15"></a>&nbsp;<a href="https://www.linkedin.com/in/hairogarcia"><img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"></a></td>
-<td align="center"><a href="https://www.linkedin.com/in/stephanieenciso/"><img src="https://media-exp1.licdn.com/dms/image/C4E03AQHDayFlZOzjqg/profile-displayphoto-shrink_400_400/0/1605632211774?e=1618444800&v=beta&t=uStT0oGhfj3D9hqzaDbwLT2FOvgSbWO_bPlsl80pRpU" width="100px;" alt=""/><br /><sub><b>Stephanie Enciso</b></sub></a><br /><a href="https://www.linkedin.com/in/stephanieenciso/"><img src="https://github.com/favicon.ico" width="15"></a>&nbsp;<a href="https://www.linkedin.com/in/stephanieenciso/"><img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"></a></td>
-<td align="center"><a href="https://github.com"><img src="https://ca.slack-edge.com/ESZCHB482-U01BUBTV3E3-d28c8d925367-512" width="100px;" alt=""/><br /><sub><b>Mona Hassan</b></sub></a><br /><a href="https://github.com"><img src="https://github.com/favicon.ico" width="15"></a>&nbsp;<a href="https://linkedin.com"><img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"></a></td>
+<td align="center"><a href="https://github.com/StephanieEnciso"><img src="https://avatars.githubusercontent.com/u/73484758?v=4" width="100px;" alt=""/><br /><sub><b>Stephanie Enciso</b></sub></a><br /><a href="https://github.com/StephanieEnciso"><img src="https://github.com/favicon.ico" width="15"></a>&nbsp;<a href="https://www.linkedin.com/in/stephanieenciso/"><img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"></a></td>
+<td align="center"><a href="https://github.com/monaahassan"><img src="https://avatars.githubusercontent.com/u/71738995?v=4" width="100px;" alt=""/><br /><sub><b>Mona Hassan</b></sub></a><br /><a href="https://github.com/monaahassan"><img src="https://github.com/favicon.ico" width="15"></a>&nbsp;<a href="https://www.linkedin.com/in/monaahassan/"><img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"></a></td>
 <td align="center"><a href="https://github.com/roerark"><img src="https://avatars.githubusercontent.com/u/73914929?s=400&v=4" width="100px;" alt=""/><br /><sub><b>Joe Park</b></sub></a><br /><a href="https://github.com/roerark"><img src="https://github.com/favicon.ico" width="15"></a>&nbsp;<a href="https://www.linkedin.com/in/joepark"><img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"></a></td>
-<td align="center"><a href="https://github.com/pak11273"><img src="https://media-exp1.licdn.com/dms/image/C4D03AQHEMEd21bW1CQ/profile-displayphoto-shrink_400_400/0/1606151035662?e=1618444800&v=beta&t=xcZdZpmXL-3QFjC_CkRDCjPSN5oSDNwxlM-Vz_0OY6w" width="100px;" alt=""/><br /><sub><b>Isaac Pak</b></sub></a><br /><a href="https://github.com/pak11273"><img src="https://github.com/favicon.ico" width="15"></a>&nbsp;<a href="https://www.linkedin.com/in/isaac-pak-78b72687/"><img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"></a></td>
+<td align="center"><a href="https://github.com/pak11273"><img src="https://avatars.githubusercontent.com/u/2309184?v=4" width="100px;" alt=""/><br /><sub><b>Isaac Pak</b></sub></a><br /><a href="https://github.com/pak11273"><img src="https://github.com/favicon.ico" width="15"></a>&nbsp;<a href="https://www.linkedin.com/in/isaac-pak-78b72687/"><img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"></a></td>
 </tr>
+</table>
 
 <br>
 <br>
@@ -27,7 +31,6 @@ You can find the deployed project at [African Market Place](https://front-end-on
 ![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)
 
 - Fork and clone the repo to install it as your own remote.
-  - **note** please [be sure to set your remote](https://help.github.jp/enterprise/2.11/user/articles/changing-a-remote-s-url/) for this repo to point to your Labs Team Front End Repository.
 - run: `yarn install` to download all dependencies.
 - run: `yarn start` to start your local development server.
 
@@ -40,14 +43,6 @@ You can find the deployed project at [African Market Place](https://front-end-on
 - Local African small businesses can list their products
 
 #### Front end deployed to `vercel`
-
-<br />
-<hr />
-<h2>To demo the features use</h2>
-<p>username: demo
-<p>password: password
-<hr />
-<br />
 
 #### [Back end](https://github.com/AfricanMarketPlace-TeamSimba/backend) built using: `heroku`
 
