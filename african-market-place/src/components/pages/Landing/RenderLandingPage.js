@@ -35,13 +35,13 @@ function RenderLandingPage(props) {
         <div className="inner">
           <header className="major">
             <h2>
-              A project built with the PERN Stack
+              A project built on the PERN Stack
               <br />5 dedicated software engineers
             </h2>
             <p>
               My role was to design and implement the layouts and styles for
               this project. Upon completion I further enhanced the app and
-              improved the architecture. and
+              improved the architecture.
             </p>
           </header>
           <ul className="icons major">
@@ -72,7 +72,7 @@ function RenderLandingPage(props) {
           <div className="content">
             <h2>Redux state management</h2>
             <p>
-              We used redux to handle global state. Redux thunks was used for
+              We used redux to handle global state. Redux Thunk was used for
               asynchronous calls.
             </p>
           </div>
@@ -96,7 +96,10 @@ function RenderLandingPage(props) {
           <div className="content">
             <h2>Challenges</h2>
             <p>
-              We held daily standups and helped out where bottlenecks occurred.
+              We held daily standups, organized and assigned tasks. Our biggest
+              challenge was more about time management and not necessarily
+              building any complex features. We were able to ship a viable mvp
+              on time!
             </p>
           </div>
         </section>
@@ -106,12 +109,8 @@ function RenderLandingPage(props) {
         <div className="inner">
           <header className="major">
             <h2>Our Tech Stack</h2>
-            <p>
-              This is the tech stack we used
-              <br />
-              We spent several days of planning and decided to use the best
-              tools
-            </p>
+            <br />
+            <p>We spent a day of choosing the right tools for the job</p>
           </header>
           <ul className="features">
             <li className="icon fa-paper-plane">
@@ -128,13 +127,16 @@ function RenderLandingPage(props) {
             <li className="icon solid fa-code">
               <h3>Express</h3>
               <p>
-                We used Node Express so that we could have the power of async
-                functions.
+                Prototyping fast was another big consideration here. The whole
+                team are experts at Javascript.
               </p>
             </li>
             <li className="icon solid fa-headphones-alt">
               <h3>Postgres SQL</h3>
-              <p>Our database needed to be very performant.</p>
+              <p>
+                Our database needed to be relational, battle-tested and very
+                performant.
+              </p>
             </li>
             <li className="icon fa-heart">
               <h3>Knex</h3>
@@ -146,7 +148,10 @@ function RenderLandingPage(props) {
             </li>
             <li className="icon fa-flag">
               <h3>SASS</h3>
-              <p>For the UI we chose an old favorite.</p>
+              <p>
+                This was already in our scaffolding framework so we built upon
+                it.
+              </p>
             </li>
           </ul>
         </div>

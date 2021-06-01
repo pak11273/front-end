@@ -103,7 +103,7 @@ const Login = props => {
                   margin: '40px auto',
                 }}
               >
-                username
+                username (demoUser)
                 <input
                   type="text"
                   name="username"
@@ -118,7 +118,7 @@ const Login = props => {
                   margin: '40px auto',
                 }}
               >
-                password
+                password (password)
                 <input
                   type="password"
                   name="password"
