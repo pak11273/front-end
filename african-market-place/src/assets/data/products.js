@@ -1,10 +1,14 @@
 import { v4 } from 'uuid';
 
+let key = process.env.PIXABAY_KEY;
+let pixaAPI = `https://pixabay.com/api/${key}`;
+console.log('key: ', pixaAPI);
+
 export const products = [
   {
     id: v4(),
     item_picUrl:
-    'https://post.healthline.com/wp-content/uploads/2020/09/Do_Apples_Affect_Diabetes_and_Blood_Sugar_Levels-732x549-thumbnail-1-732x549.jpg',
+      'https://post.healthline.com/wp-content/uploads/2020/09/Do_Apples_Affect_Diabetes_and_Blood_Sugar_Levels-732x549-thumbnail-1-732x549.jpg',
     item_name: 'apples',
     item_price: '3.90',
     item_qty: 1,
