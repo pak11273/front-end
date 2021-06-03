@@ -1,7 +1,8 @@
 import { v4 } from 'uuid';
 
+
 let key = process.env.PIXABAY_KEY;
-let pixaAPI = `https://pixabay.com/api/${key}`;
+let pixaAPI = `https://pixabay.com/api/?key=12284340-ae329c7f48e191cb0c76643cd&q=yellow+flowers&image_type=photo
 console.log('key: ', pixaAPI);
 
 export const products = [
